@@ -19,7 +19,6 @@ jQuery(document).ready(function(){
 		var selected = jQuery(this).val();
 		
 		jQuery('.admin-registration-form-select-other-details-default').show();
-		jQuery('.admin-registration-form-submit').show();
 		
 		if (selected==='Email' || selected==='Number' || selected==='Text' || selected === 'Password'){
 			jQuery('.admin-registration-form-select-other-details-checkbox-radio-select').hide();

@@ -21,7 +21,7 @@ function admin_style_enqueue(){
 	wp_enqueue_script('reorderjs', get_template_directory_uri().'/assets/js/reorder.js',  array( 'jquery' , 'jquery-ui-sortable' ), '1.0.0' , true);
 	wp_localize_script('reorderjs', 'WP_REGISTRATIONS_FIELD_LISTING', array(
 			'security' => wp_create_nonce('wp-registrations-field-order'),
-			'success' => __('Speakers sort order has been saved.'),
+			'success' => __('Registraions Field sort order has been saved.'),
 			'failure' => __('There was an error saving the sort order, or you do not have priviledges')
 		));
 }
@@ -74,3 +74,4 @@ function myplugin_flush_rewrites() {
 include(dirname(__FILE__).'/inc/committees_admin_menu.php');
 include(dirname(__FILE__).'/inc/countries_admin_menu.php');
 include(dirname(__FILE__).'/inc/registrations_admin_panel.php');
+include(dirname(__FILE__).'/inc/registered_user_list.php');
