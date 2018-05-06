@@ -34,20 +34,25 @@ var x = setInterval(function() {
 
 
 //Navbar Show and Hide
-/*jQuery(document).ready(function(){
+jQuery(document).ready(function(){
   var height = jQuery(window).height();
 
   jQuery(window).scroll(function(){
-    if (jQuery(window).scrollTop() > height*3/4){
-      jQuery(".navbar").show();
+    if (jQuery(window).scrollTop() > height/2){
+      jQuery(".navbar").css({'background-color':'white'});
+      jQuery(".menu-item a").css({'color':'black'});
+      jQuery('.dropdown-menu>li>a').css({'color':'black', 'text-shadow': '0 0 20px #000'});
+      jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(255,255,255,0.95)', 'border':'0'});
     }else{
-      jQuery(".navbar").hide();
+      jQuery(".navbar").css({'background-color':'transparent'});
+      jQuery(".menu-item a").css({'color':'white'});
+      jQuery('.dropdown-menu>li>a').css({'color':'white','text-shadow': '0 0 20px #fff'});
+      jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(0,0,0,0.15)', 'border':'1px solid #555'});
     }  
   })
   
-})*/
+})
 
-jQuery(".navbar").hide();
 
 
 //Registration Form Select Delegation Type

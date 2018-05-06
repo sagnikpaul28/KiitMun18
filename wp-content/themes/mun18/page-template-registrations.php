@@ -191,25 +191,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$propername = implode(",", $propername);
 		$wpdb->query($wpdb->prepare('INSERT INTO registration_double_delegation ('.$propername.') VALUES ('.$test.')', $propervalue));
 	}
-
-	
-
-	/*$id = $wpdb->get_var('SELECT regid FROM userlist ORDER BY id DESC LIMIT 1');
-
-	foreach ($_POST as $key=>$value){
-		if (is_array($value)){
-			foreach ($value as $value){
-				$wpdb->query( $wpdb->prepare(
-					"INSERT INTO userlist (regid, meta_name, meta_value) VALUES ( %d , %s , %s ) ", array( $id, esc_sql(strip_tags($key)), esc_sql(strip_tags($value)) )
-				) );
-			}
-		}else{
-			$wpdb->query( $wpdb->prepare(
-				"INSERT INTO userlist (regid, meta_name, meta_value) VALUES ( %d , %s , %s ) ", array( $id, esc_sql(strip_tags($key)), esc_sql(strip_tags($value)) )
-			) );
-		}
-		
-	}*/
 }
 
 ?>

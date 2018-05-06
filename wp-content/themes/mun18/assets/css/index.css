@@ -21,23 +21,14 @@ a:hover{
 
 
 
-/*Header*/
 /*Navbar*/
 .navbar{
     border-top: 0;
     z-index: 10000;
     position: fixed;
-}
-a.navbar-brand.navbar-left {
-    transition: 0.2s;
     width: 100%;
-    margin: 0 !important;
-    height: 100%;
-    padding-bottom: 0;
-}
-img.img-responsive {
-    width: 30%;
-    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: 0 0 20px #aaa;
 }
 div#navbar {
     padding: 0 !important;
@@ -51,6 +42,7 @@ div#navbar {
     float: none !important;
 }
 .navbar-nav>li {
+    font-size: 1.2em;
     float: none;
     text-align: center;
     display: inline-block;
@@ -63,19 +55,27 @@ div#navbar {
 }
 .nav>li>a:focus, .nav>li>a:hover{
     background-color: transparent;
-    color: orangered;
     transition: 0.3s;
+    color: #00c2e5 !important;
 }
 .current-menu-item a{
-    color: orangered;
-    text-decoration: underline;
-    text-underline-position: under;
+    color: #00c2e5 !important;
+    text-decoration: underline !important;
+    text-underline-position: under !important;
 }
 .navbar-nav>li>.dropdown-menu{
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid #555;
 }
 .dropdown-menu>li>a{
-    color: white !important;
+    color: white;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    background-color: rgba(0,0,0,0.15) !important;   
+}
+.dropdown-menu>li>a:hover {
+    color: #00c2e5 !important;
+    background-color: transparent !important;
 }
 .nav .open>a{
     background-color: transparent;
@@ -478,7 +478,7 @@ li.menu-item{
 }
 #registrations-first .registrations-back .layer {
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
     position: absolute;
     top: 0;
     height: 100%;
