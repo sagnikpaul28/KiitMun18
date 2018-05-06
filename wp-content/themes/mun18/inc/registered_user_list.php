@@ -11,52 +11,60 @@ add_action('admin_menu', 'add_registrations_menu_page');
 
 function function_view_registered_users_single(){ ?>
 	<div class="wrap">
-		<h1 class="wp-heading-inline">Registration List</h1>
-		<br/>
+		<h1 class="wp-heading-inline">Single Delegation Registration List</h1>
+		<br/><br/>
 		<?php 
 		global $wpdb;
-		$results = $wpdb->get_col("SELECT DISTINCT regid FROM userlist");
-		$id = 1;
-		foreach ($results as $r) {
-			$row = $wpdb->get_row("SELECT * FROM userlist WHERE regid=$r AND meta_value='single-delegation' AND meta_name='delegation'");
-			if ($row){ 
-				$rows = $wpdb->get_results("SELECT * FROM userlist WHERE regid=$r");
-				$name = $wpdb->get_var("SELECT meta_value FROM userlist WHERE regid=$r AND meta_name='single-delegate-name'");
-				?>
-				<button class="accordion"><?php echo $id++; ?>. Name: <?php echo $name; ?></button>	
-				<div class="panel">
-					<div class="col-xs-12 col-sm-6"> 			
-						<?php
-						foreach ($rows as $rows) { ?>
-					 		<?php
-					 		$propername = "None";
-					 		$name1 = $rows->meta_name;
-					 		if ($name1 === 'committee1'){
-					 			$propername = 'Committee Preference 1'; ?>
-					 			</div>
-					 			<div class="col-xs-12 col-sm-6">
-					 			<?php  
-					 		}else if ($name1 === 'country1'){
-					 			$propername = 'Country Preference 1';
-					 		}else if ($name1 === 'committee2'){
-					 			$propername = 'Committee Preference 2';
-					 		}else if ($name1 === 'country2'){
-					 			$propername = 'Country Preference 2';
-					 		}else if ($name1 === 'committee3'){
-					 			$propername = 'Committee Preference 3';
-					 		}else if ($name3 === 'country3'){
-					 			$propername = 'Country Preference 3';
-					 		}else if ($name != 'delegation'){
-					 			$propername = $wpdb->get_var("SELECT propername FROM registration_form WHERE name='$name1'");	
-					 		}if ($propername!= "None"){
-						 		echo $propername; ?>: <?php echo $rows->meta_value;	
-						 		echo "<br/>";
-					 		}
-						 } ?>
-					</div>
-				</div> 
-			<?php }
-		}
+		$results = $wpdb->get_results('SELECT * FROM registration_single_delegation');
+		foreach ($results as $r) { ?>
+			<button class="accordion"><?php echo $r->id; ?>. Name: <?php echo $r->Name; ?></button>
+			<div class="panel">
+				<?php 
+				foreach ($r as $key=>$value) {
+					?><h4><?php echo $key; ?>: <?php echo $value; ?></h4><?php 
+				} ?>
+			</div>
+		<?php }
+		?>
+	</div>
+<?php }
+
+function function_view_registered_users_ip(){ ?>
+	<div class="wrap">
+		<h1 class="wp-heading-inline">International Press Registration List</h1>
+		<br/><br/>
+		<?php 
+		global $wpdb;
+		$results = $wpdb->get_results('SELECT * FROM registration_ip');
+		foreach ($results as $r) { ?>
+			<button class="accordion"><?php echo $r->id; ?>. Name: <?php echo $r->Name; ?></button>
+			<div class="panel">
+				<?php 
+				foreach ($r as $key=>$value) {
+					?><h4><?php echo $key; ?>: <?php echo $value; ?></h4><?php 
+				} ?>
+			</div>
+		<?php }
+		?>
+	</div>
+<?php }
+
+function function_view_registered_users_double(){ ?>
+	<div class="wrap">
+		<h1 class="wp-heading-inline">International Press Registration List</h1>
+		<br/><br/>
+		<?php 
+		global $wpdb;
+		$results = $wpdb->get_results('SELECT * FROM registration_double_delegation');
+		foreach ($results as $r) { ?>
+			<button class="accordion"><?php echo $r->id; ?>. Name1: <?php echo $r->Name1; ?>. Name2: <?php echo $r->Name2; ?></button>
+			<div class="panel">
+				<?php 
+				foreach ($r as $key=>$value) {
+					?><h4><?php echo $key; ?>: <?php echo $value; ?></h4><?php 
+				} ?>
+			</div>
+		<?php }
 		?>
 	</div>
 <?php }

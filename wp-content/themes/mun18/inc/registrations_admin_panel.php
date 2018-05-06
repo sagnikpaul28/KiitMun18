@@ -202,7 +202,7 @@ function function_create_single_delegation_registrations_form_page(){ ?>
 					<input type="hidden" name="admin-registration-form-fields-id" value="<?php echo $r->id; ?>">
 					<input type="hidden" name="admin-registration-form-field-type" value="<?php echo $r->type; ?>">
 					<div>	
-						<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes):</label>
+						<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes. Should not contain any space):</label>
 						<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required value="<?php echo $r->propername; ?>">
 					</div>
 
@@ -312,7 +312,7 @@ function function_create_double_delegation_registrations_form_page(){ ?>
 					<input type="hidden" name="admin-registration-form-field-type" value="<?php echo $r->type; ?>">
 					
 					<div>	
-						<label for="admin-registration-form-field-proper-name">Name ( To be used for identification purposes ) :</label>
+						<label for="admin-registration-form-field-proper-name">Name ( To be used for identification purposes. Should not contain any space ) :</label>
 						<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required value="<?php echo $r->propername; ?>">
 					</div>
 
@@ -429,7 +429,7 @@ function function_create_ip_registrations_form_page(){ ?>
 					<input type="hidden" name="admin-registration-form-fields-id" value="<?php echo $r->id; ?>">
 					<input type="hidden" name="admin-registration-form-field-type" value="<?php echo $r->type; ?>">
 					<div>	
-						<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes):</label>
+						<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes. Should not contain any space):</label>
 						<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required value="<?php echo $r->propername; ?>">
 					</div>
 
@@ -556,7 +556,7 @@ function function_create_single_delegation_registrations_form_page_add(){ ?>
 			</div>
 
 			<div class="admin-registration-form-select-other-details-default">
-				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes) :</label><br/>
+				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes. Should not contain any space) :</label><br/>
 				<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required><br/><br/>
 				<label for="admin-registration-form-field-name">Name ( Should be in the form of single-delegate- ) :</label><br/>
 				<input type="text" name="admin-registration-form-field-name" id="admin-registration-form-field-name" required><br/><br/>
@@ -643,7 +643,7 @@ function function_create_double_delegation_registrations_form_page_add(){ ?>
 			</div>
 
 			<div class="admin-registration-form-select-other-details-default">
-				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes) :</label><br/>
+				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes. Should not contain any space) :</label><br/>
 				<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required><br/><br/>
 				<label for="admin-registration-form-field-name">Name ( Should be in the form of double-delegate- ) :</label><br/>
 				<input type="text" name="admin-registration-form-field-name" id="admin-registration-form-field-name" required><br/><br/>
@@ -725,7 +725,7 @@ function function_create_ip_registrations_form_page_add(){ ?>
 			</div>
 
 			<div class="admin-registration-form-select-other-details-default">
-				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes) :</label><br/>
+				<label for="admin-registration-form-field-proper-name">Name (To be used for identification purposes. Should not contain any space) :</label><br/>
 				<input type="text" name="admin-registration-form-field-proper-name" id="admin-registration-form-field-proper-name" required><br/><br/>
 				<label for="admin-registration-form-field-name">Name ( Should be in the form of ip- ) :</label><br/>
 				<input type="text" name="admin-registration-form-field-name" id="admin-registration-form-field-name" required><br/><br/>
