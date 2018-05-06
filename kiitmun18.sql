@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2018 at 12:07 AM
+-- Generation Time: May 06, 2018 at 02:20 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -25,11 +25,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `registration_double_delegation`
+--
+
+CREATE TABLE `registration_double_delegation` (
+  `id` int(11) NOT NULL,
+  `Name1` text NOT NULL,
+  `Name2` text NOT NULL,
+  `Email1` text NOT NULL,
+  `Email2` text NOT NULL,
+  `Number1` text NOT NULL,
+  `Number2` text NOT NULL,
+  `Committee1` text NOT NULL,
+  `Country1` text NOT NULL,
+  `Committee2` text NOT NULL,
+  `Country2` text NOT NULL,
+  `Committee3` text NOT NULL,
+  `Country3` text NOT NULL,
+  `FinalCommittee` text NOT NULL,
+  `FinalCountry` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration_double_delegation`
+--
+
+INSERT INTO `registration_double_delegation` (`id`, `Name1`, `Name2`, `Email1`, `Email2`, `Number1`, `Number2`, `Committee1`, `Country1`, `Committee2`, `Country2`, `Committee3`, `Country3`, `FinalCommittee`, `FinalCountry`) VALUES
+(1, 'Sagnik Paul', 'rrr', 'sagnikpaul2882@gmail.com', 'sl2882@gmail.com', '5555', '6666', 'United Nations Disarmament and International Security Committee ( DISEC )', 'Ukraine', 'United Nations Disarmament and International Security Committee ( DISEC )', 'Ukraine', 'United Nations Disarmament and International Security Committee ( DISEC )', 'Ukraine', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `registration_form`
 --
 
 CREATE TABLE `registration_form` (
   `id` int(11) NOT NULL,
+  `propername` text NOT NULL,
   `name` text NOT NULL,
   `type` text NOT NULL,
   `label` text NOT NULL,
@@ -44,29 +76,80 @@ CREATE TABLE `registration_form` (
 -- Dumping data for table `registration_form`
 --
 
-INSERT INTO `registration_form` (`id`, `name`, `type`, `label`, `placeholder`, `required`, `options`, `numberofrows`, `delegation`) VALUES
-(46, 'single-delegate-name', 'Text', 'Name:', 'Enter Your Name..', 'yes', ' ', ' ', 'single'),
-(51, 'single-delegate-email', 'Email', 'Email:', 'Enter Your Email..', 'yes', ' ', ' ', 'single'),
-(52, 'single-delegate-gender', 'Radio', 'Gender:', ' ', 'yes', 'Male,Female', ' ', 'single'),
-(53, 'single-delegate-address', 'Textarea', 'Address:', 'Enter Your Address..', 'yes', ' ', '5', 'single'),
-(54, 'single-checkbox-terms-and-conditions', 'Checkbox', 'Terms and Conditions', ' ', 'yes', 'I have read the Terms and Conditions', ' ', 'single'),
-(75, 'double-delegate-name', 'Text', 'Name:', 'Enter Your Name..', 'yes', ' ', ' ', 'double-double'),
-(79, 'double-delegate-email', 'Email', 'Email:', 'Enter Your Email..', 'yes', ' ', ' ', 'double-double'),
-(80, 'double-delegate-number', 'Number', 'Number:', 'Enter Your Number..', 'yes', ' ', ' ', 'double-double'),
-(81, 'double-checkbox-terms-and-conditions', 'Checkbox', 'Terms and Conditions', ' ', 'yes', 'I have read the Terms and Conditions', ' ', 'double-single');
+INSERT INTO `registration_form` (`id`, `propername`, `name`, `type`, `label`, `placeholder`, `required`, `options`, `numberofrows`, `delegation`) VALUES
+(32, 'Name', 'ip-name', 'Text', 'Name:', 'Enter Your Name..', 'yes', ' ', ' ', 'ip'),
+(33, 'Email', 'ip-email', 'Email', 'Email:', 'Enter Your Email..', 'yes', ' ', ' ', 'ip'),
+(34, 'Number', 'ip-number', 'Number', 'Number:', 'Enter Your Number..', 'yes', ' ', ' ', 'ip'),
+(35, 'DOB', 'ip-dob', 'Text', 'Date Of Birth:', 'Enter Date Of Birth ( dd/mm/yyyy )', 'yes', ' ', ' ', 'ip'),
+(36, 'University', 'ip-university', 'Text', 'University:', 'Enter Your University', 'yes', ' ', ' ', 'ip'),
+(37, 'Experience', 'ip-experience', 'Text', 'Experience:', 'Enter Your Experience', 'yes', ' ', ' ', 'ip'),
+(46, 'Name', 'single-delegate-name', 'Text', 'Name:', 'Enter Your Name..', 'yes', ' ', ' ', 'single'),
+(51, 'Email', 'single-delegate-email', 'Email', 'Email:', 'Enter Your Email..', 'yes', ' ', ' ', 'single'),
+(52, 'Gender', 'single-delegate-gender', 'Radio', 'Gender:', ' ', 'yes', 'Male,Female', ' ', 'single'),
+(53, 'Address', 'single-delegate-address', 'Textarea', 'Address:', 'Enter Your Address..', 'yes', ' ', '5', 'single'),
+(75, 'Name', 'double-delegate-name', 'Text', 'Name:', 'Enter Your Name..', 'yes', ' ', ' ', 'double-double'),
+(79, 'Email', 'double-delegate-email', 'Email', 'Email:', 'Enter Your Email..', 'yes', ' ', ' ', 'double-double'),
+(80, 'Number', 'double-delegate-number', 'Number', 'Number:', 'Enter Your Number..', 'yes', ' ', ' ', 'double-double');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userlist`
+-- Table structure for table `registration_ip`
 --
 
-CREATE TABLE `userlist` (
+CREATE TABLE `registration_ip` (
   `id` int(11) NOT NULL,
-  `regid` int(11) NOT NULL,
-  `meta_name` text NOT NULL,
-  `meta_value` longtext NOT NULL
+  `Name` text NOT NULL,
+  `Email` text NOT NULL,
+  `Number` text NOT NULL,
+  `DOB` text NOT NULL,
+  `University` text NOT NULL,
+  `Experience` text NOT NULL,
+  `Committee1` text NOT NULL,
+  `Country1` text NOT NULL,
+  `Committee2` text NOT NULL,
+  `Country2` text NOT NULL,
+  `Committee3` text NOT NULL,
+  `Country3` text NOT NULL,
+  `FinalCommittee` text NOT NULL,
+  `FinalCountry` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration_ip`
+--
+
+INSERT INTO `registration_ip` (`id`, `Name`, `Email`, `Number`, `DOB`, `University`, `Experience`, `Committee1`, `Country1`, `Committee2`, `Country2`, `Committee3`, `Country3`, `FinalCommittee`, `FinalCountry`) VALUES
+(1, 'Sagnik Paul', 'sagnikpaul2882@gmail.com', '9999', '54353n', 'etet', '4363', 'The United Nations Ocean Conference ( UN Ocean )', 'Bolivarian Republic of Venezuela', 'The United Nations Ocean Conference ( UN Ocean )', 'Vietnam', 'Organisation For The Prohibition of Chemical Weapons ( OPCW )', 'Tajikistan', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration_single_delegation`
+--
+
+CREATE TABLE `registration_single_delegation` (
+  `id` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Email` text NOT NULL,
+  `Gender` text NOT NULL,
+  `Address` text NOT NULL,
+  `Committee1` text NOT NULL,
+  `Country1` text NOT NULL,
+  `Committee2` text NOT NULL,
+  `Country2` text NOT NULL,
+  `Committee3` text NOT NULL,
+  `Country3` text NOT NULL,
+  `FinalCommittee` text NOT NULL,
+  `FinalCountry` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration_single_delegation`
+--
+
+INSERT INTO `registration_single_delegation` (`id`, `Name`, `Email`, `Gender`, `Address`, `Committee1`, `Country1`, `Committee2`, `Country2`, `Committee3`, `Country3`, `FinalCommittee`, `FinalCountry`) VALUES
+(2, 'Sagnik Paul', 'sagnikpaul2882@gmail.com', 'Male', '40 Sisir Bagan Road\r\nBehala', 'United nations Commission On Narcotic Drugs ( UNCND )', 'South Korea', 'United Nations Social, Humanitarian and Cultural Committee ( SOCHUM )', 'Senegal', 'United Nations Special Political and Decolonization Committee ( SPECPOL )', 'Togo', '', '');
 
 -- --------------------------------------------------------
 
@@ -253,11 +336,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (106, 'widget_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (107, 'widget_nav_menu', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (108, 'widget_custom_html', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
-(109, 'cron', 'a:4:{i:1525484392;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1525531575;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1525546016;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(109, 'cron', 'a:4:{i:1525570792;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1525617975;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1525632416;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (110, 'theme_mods_twentyseventeen', 'a:2:{s:18:\"custom_css_post_id\";i:-1;s:16:\"sidebars_widgets\";a:2:{s:4:\"time\";i:1524322037;s:4:\"data\";a:4:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:9:\"sidebar-2\";a:0:{}s:9:\"sidebar-3\";a:0:{}}}}', 'yes'),
-(114, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-4.9.5.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-4.9.5.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-4.9.5-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-4.9.5-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"4.9.5\";s:7:\"version\";s:5:\"4.9.5\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"4.7\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1525441221;s:15:\"version_checked\";s:5:\"4.9.5\";s:12:\"translations\";a:0:{}}', 'no'),
-(116, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1525440418;s:7:\"checked\";a:2:{s:19:\"akismet/akismet.php\";s:5:\"4.0.3\";s:9:\"hello.php\";s:3:\"1.7\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:19:\"akismet/akismet.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.0.3\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.0.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:3:\"1.6\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:58:\"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";s:2:\"1x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
-(119, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1525440418;s:7:\"checked\";a:1:{s:5:\"mun18\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
+(114, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-4.9.5.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-4.9.5.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-4.9.5-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-4.9.5-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"4.9.5\";s:7:\"version\";s:5:\"4.9.5\";s:11:\"php_version\";s:5:\"5.2.4\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"4.7\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1525527853;s:15:\"version_checked\";s:5:\"4.9.5\";s:12:\"translations\";a:0:{}}', 'no'),
+(116, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1525527858;s:7:\"checked\";a:2:{s:19:\"akismet/akismet.php\";s:5:\"4.0.3\";s:9:\"hello.php\";s:3:\"1.7\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:19:\"akismet/akismet.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.0.3\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.0.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:3:\"1.6\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:58:\"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907\";s:2:\"1x\";s:63:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:65:\"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
+(119, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1525527858;s:7:\"checked\";a:1:{s:5:\"mun18\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
 (120, 'can_compress_scripts', '1', 'no'),
 (138, 'current_theme', '2018', 'yes'),
 (139, 'theme_mods_mun18', 'a:3:{i:0;b:0;s:18:\"nav_menu_locations\";a:1:{s:7:\"primary\";i:6;}s:18:\"custom_css_post_id\";i:-1;}', 'yes'),
@@ -878,7 +961,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (639, 242, '_edit_last', '1'),
 (640, 242, '_wp_page_template', 'page-template-registrations.php'),
 (641, 242, 'country-list', NULL),
-(642, 242, '_edit_lock', '1525036758:1'),
+(642, 242, '_edit_lock', '1525530103:1'),
 (643, 244, '_wp_attached_file', '2018/05/23213384_747947142069773_5353532491711064836_o.jpg'),
 (644, 244, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:2048;s:6:\"height\";i:1356;s:4:\"file\";s:58:\"2018/05/23213384_747947142069773_5353532491711064836_o.jpg\";s:5:\"sizes\";a:4:{s:9:\"thumbnail\";a:4:{s:4:\"file\";s:58:\"23213384_747947142069773_5353532491711064836_o-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:6:\"medium\";a:4:{s:4:\"file\";s:58:\"23213384_747947142069773_5353532491711064836_o-300x199.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:199;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:58:\"23213384_747947142069773_5353532491711064836_o-768x509.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:509;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:5:\"large\";a:4:{s:4:\"file\";s:59:\"23213384_747947142069773_5353532491711064836_o-1024x678.jpg\";s:5:\"width\";i:1024;s:6:\"height\";i:678;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
 (645, 245, '_wp_attached_file', '2018/05/23270371_747947488736405_122483572637752744_o.jpg'),
@@ -973,7 +1056,37 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (760, 279, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:1367;s:6:\"height\";i:768;s:4:\"file\";s:58:\"2018/05/23509229_750746758456478_7400223089167350741_o.jpg\";s:5:\"sizes\";a:4:{s:9:\"thumbnail\";a:4:{s:4:\"file\";s:58:\"23509229_750746758456478_7400223089167350741_o-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:6:\"medium\";a:4:{s:4:\"file\";s:58:\"23509229_750746758456478_7400223089167350741_o-300x169.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:169;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:58:\"23509229_750746758456478_7400223089167350741_o-768x431.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:431;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:5:\"large\";a:4:{s:4:\"file\";s:59:\"23509229_750746758456478_7400223089167350741_o-1024x575.jpg\";s:5:\"width\";i:1024;s:6:\"height\";i:575;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:10:\"1525370562\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"1\";s:8:\"keywords\";a:0:{}}}'),
 (761, 280, '_wp_attached_file', '2018/05/23509356_750391808491973_5902390836740344430_o.jpg'),
 (762, 280, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:1912;s:6:\"height\";i:1076;s:4:\"file\";s:58:\"2018/05/23509356_750391808491973_5902390836740344430_o.jpg\";s:5:\"sizes\";a:4:{s:9:\"thumbnail\";a:4:{s:4:\"file\";s:58:\"23509356_750391808491973_5902390836740344430_o-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:6:\"medium\";a:4:{s:4:\"file\";s:58:\"23509356_750391808491973_5902390836740344430_o-300x169.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:169;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:58:\"23509356_750391808491973_5902390836740344430_o-768x432.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:432;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:5:\"large\";a:4:{s:4:\"file\";s:59:\"23509356_750391808491973_5902390836740344430_o-1024x576.jpg\";s:5:\"width\";i:1024;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:10:\"1525370794\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"1\";s:8:\"keywords\";a:0:{}}}'),
-(763, 279, '_edit_lock', '1525386230:1');
+(763, 279, '_edit_lock', '1525386230:1'),
+(764, 281, '_edit_last', '1'),
+(765, 281, '_wp_page_template', 'default'),
+(766, 281, '_edit_lock', '1525530425:1'),
+(767, 283, '_edit_last', '1'),
+(768, 283, '_edit_lock', '1525532108:1'),
+(769, 283, 'country-list', 'Zimbabwe,Zambia,Yemen,Vietnam,Bolivarian Republic of Venezuela,Vanuatu,Uzbekistan'),
+(770, 285, '_edit_last', '1'),
+(771, 285, '_edit_lock', '1525532098:1'),
+(772, 285, 'country-list', 'Ukraine,Uganda,Tuvalu,Turkmenistan,Turkey,Tunisia,Trinidad and Tobago,Tonga,Togo,Timor-Leste,The Former Yugoslav Republic of Macedonia'),
+(773, 286, '_edit_last', '1'),
+(774, 286, '_edit_lock', '1525532096:1'),
+(775, 286, 'country-list', 'Rwanda,Russian Federation,Romania,Republic of Moldova,South Korea,Qatar,Portugal,Poland,Oman'),
+(776, 287, '_edit_last', '1'),
+(777, 287, '_edit_lock', '1525532084:1'),
+(778, 287, 'country-list', 'Republic of the Niger,Nicaragua,New Zealand,Netherlands,Nepal,Nauru'),
+(779, 288, '_edit_last', '1'),
+(780, 288, '_edit_lock', '1525532063:1'),
+(781, 288, 'country-list', 'Sri Lanka,Spain,South Sudan'),
+(782, 289, '_edit_last', '1'),
+(783, 289, '_edit_lock', '1525532050:1'),
+(784, 289, 'country-list', 'Thailand,Tajikistan,Syrian Arab Republic,Switzerland,Somalia,Mali'),
+(785, 290, '_edit_last', '1'),
+(786, 290, '_edit_lock', '1525532043:1'),
+(787, 290, 'country-list', 'Serbia,Senegal,Saudi Arabia,São Tomé and Príncipe'),
+(788, 292, '_edit_last', '1'),
+(789, 292, '_edit_lock', '1525532026:1'),
+(790, 292, 'country-list', 'Tonga,Togo,Timor-Leste'),
+(791, 293, '_edit_last', '1'),
+(792, 293, '_edit_lock', '1525532005:1'),
+(793, 293, 'country-list', 'Tajikistan,Syrian Arab Republic,Switzerland');
 
 -- --------------------------------------------------------
 
@@ -1059,7 +1172,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (71, 1, '2018-04-28 10:47:47', '2018-04-28 10:47:47', '', 'Chad', '', 'publish', 'closed', 'closed', '', 'chad', '', '', '2018-04-28 10:48:19', '2018-04-28 10:48:19', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=71', 0, 'country', '', 0),
 (72, 1, '2018-04-28 10:47:58', '2018-04-28 10:47:58', '', 'Chile', '', 'publish', 'closed', 'closed', '', 'chile', '', '', '2018-04-28 10:48:25', '2018-04-28 10:48:25', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=72', 0, 'country', '', 0),
 (73, 1, '2018-04-28 10:48:04', '2018-04-28 10:48:04', '', 'China', '', 'publish', 'closed', 'closed', '', 'china', '', '', '2018-04-28 10:48:33', '2018-04-28 10:48:33', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=73', 0, 'country', '', 0),
-(74, 1, '2018-04-28 10:48:05', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 10:48:05', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=74', 0, 'country', '', 0),
 (75, 1, '2018-04-28 10:48:46', '2018-04-28 10:48:46', '', 'Colombia', '', 'publish', 'closed', 'closed', '', 'colombia', '', '', '2018-04-28 10:48:46', '2018-04-28 10:48:46', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=75', 0, 'country', '', 0),
 (76, 1, '2018-04-28 10:48:54', '2018-04-28 10:48:54', '', 'Comoros', '', 'publish', 'closed', 'closed', '', 'comoros', '', '', '2018-04-28 10:48:54', '2018-04-28 10:48:54', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=76', 0, 'country', '', 0),
 (77, 1, '2018-04-28 10:49:43', '2018-04-28 10:49:43', '', 'Republic of the Congo', '', 'publish', 'closed', 'closed', '', 'republic-of-the-congo', '', '', '2018-04-28 10:49:43', '2018-04-28 10:49:43', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=77', 0, 'country', '', 0),
@@ -1093,7 +1205,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (105, 1, '2018-04-28 11:12:46', '2018-04-28 11:12:46', '', 'Greece', '', 'publish', 'closed', 'closed', '', 'greece', '', '', '2018-04-28 11:12:46', '2018-04-28 11:12:46', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=105', 0, 'country', '', 0),
 (106, 1, '2018-04-28 11:12:55', '2018-04-28 11:12:55', '', 'Grenada', '', 'publish', 'closed', 'closed', '', 'grenada', '', '', '2018-04-28 11:12:55', '2018-04-28 11:12:55', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=106', 0, 'country', '', 0),
 (107, 1, '2018-04-28 11:13:04', '2018-04-28 11:13:04', '', 'Guatemala', '', 'publish', 'closed', 'closed', '', 'guatemala', '', '', '2018-04-28 11:13:04', '2018-04-28 11:13:04', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=107', 0, 'country', '', 0),
-(108, 1, '2018-04-28 11:13:12', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 11:13:12', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=108', 0, 'country', '', 0),
 (109, 1, '2018-04-28 11:14:14', '2018-04-28 11:14:14', '', 'Republic of Guinea', '', 'publish', 'closed', 'closed', '', 'republic-of-guinea', '', '', '2018-04-28 11:14:14', '2018-04-28 11:14:14', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=109', 0, 'country', '', 0),
 (110, 1, '2018-04-28 11:14:36', '2018-04-28 11:14:36', '', 'Guinea-Bissau', '', 'publish', 'closed', 'closed', '', 'guinea-bissau', '', '', '2018-04-28 11:14:36', '2018-04-28 11:14:36', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=110', 0, 'country', '', 0),
 (111, 1, '2018-04-28 11:14:47', '2018-04-28 11:14:47', '', 'Guyana', '', 'publish', 'closed', 'closed', '', 'guyana', '', '', '2018-04-28 11:14:47', '2018-04-28 11:14:47', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=111', 0, 'country', '', 0),
@@ -1111,7 +1222,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (123, 1, '2018-04-28 11:27:28', '2018-04-28 11:27:28', '', 'Jamaica', '', 'publish', 'closed', 'closed', '', 'jamaica', '', '', '2018-04-28 11:27:28', '2018-04-28 11:27:28', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=123', 0, 'country', '', 0),
 (124, 1, '2018-04-28 11:27:54', '2018-04-28 11:27:54', '', 'Japan', '', 'publish', 'closed', 'closed', '', 'japan', '', '', '2018-04-28 11:27:54', '2018-04-28 11:27:54', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=124', 0, 'country', '', 0),
 (125, 1, '2018-04-28 11:28:01', '2018-04-28 11:28:01', '', 'Jordan', '', 'publish', 'closed', 'closed', '', 'jordan', '', '', '2018-04-28 11:28:01', '2018-04-28 11:28:01', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=125', 0, 'country', '', 0),
-(126, 1, '2018-04-28 11:28:12', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 11:28:12', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=126', 0, 'country', '', 0),
 (127, 1, '2018-04-28 11:34:10', '2018-04-28 11:34:10', '', 'Kazakhstan', '', 'publish', 'closed', 'closed', '', 'kazakhstan', '', '', '2018-04-28 11:34:10', '2018-04-28 11:34:10', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=127', 0, 'country', '', 0),
 (128, 1, '2018-04-28 11:34:30', '2018-04-28 11:34:30', '', 'Kenya', '', 'publish', 'closed', 'closed', '', 'kenya', '', '', '2018-04-28 11:34:30', '2018-04-28 11:34:30', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=128', 0, 'country', '', 0),
 (129, 1, '2018-04-28 11:35:00', '2018-04-28 11:35:00', '', 'Kiribati', '', 'publish', 'closed', 'closed', '', 'kiribati', '', '', '2018-04-28 11:35:00', '2018-04-28 11:35:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=129', 0, 'country', '', 0),
@@ -1143,8 +1253,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (155, 1, '2018-04-28 11:48:47', '2018-04-28 11:48:47', '', 'Morocco', '', 'publish', 'closed', 'closed', '', 'morocco', '', '', '2018-04-28 11:48:47', '2018-04-28 11:48:47', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=155', 0, 'country', '', 0),
 (156, 1, '2018-04-28 11:48:57', '2018-04-28 11:48:57', '', 'Mozambique', '', 'publish', 'closed', 'closed', '', 'mozambique', '', '', '2018-04-28 11:48:57', '2018-04-28 11:48:57', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=156', 0, 'country', '', 0),
 (157, 1, '2018-04-28 11:49:09', '2018-04-28 11:49:09', '', 'Myanmar', '', 'publish', 'closed', 'closed', '', 'myanmar', '', '', '2018-04-28 11:49:09', '2018-04-28 11:49:09', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=157', 0, 'country', '', 0),
-(158, 1, '2018-04-28 12:13:34', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:13:34', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=committee&p=158', 0, 'committee', '', 0),
-(159, 1, '2018-04-28 12:14:51', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:14:51', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=committee&p=159', 0, 'committee', '', 0),
 (160, 1, '2018-04-28 12:17:41', '2018-04-28 12:17:41', '', 'Namibia', '', 'publish', 'closed', 'closed', '', 'namibia', '', '', '2018-04-28 12:17:41', '2018-04-28 12:17:41', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=160', 0, 'country', '', 0),
 (161, 1, '2018-04-28 12:18:02', '2018-04-28 12:18:02', '', 'Nauru', '', 'publish', 'closed', 'closed', '', 'nauru', '', '', '2018-04-28 12:18:02', '2018-04-28 12:18:02', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=161', 0, 'country', '', 0),
 (162, 1, '2018-04-28 12:18:31', '2018-04-28 12:18:31', '', 'Nepal', '', 'publish', 'closed', 'closed', '', 'nepal', '', '', '2018-04-28 12:18:31', '2018-04-28 12:18:31', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=162', 0, 'country', '', 0),
@@ -1170,7 +1278,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (182, 1, '2018-04-28 12:27:23', '2018-04-28 12:27:23', '', 'Romania', '', 'publish', 'closed', 'closed', '', 'romania', '', '', '2018-04-28 12:27:23', '2018-04-28 12:27:23', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=182', 0, 'country', '', 0),
 (183, 1, '2018-04-28 12:27:37', '2018-04-28 12:27:37', '', 'Russian Federation', '', 'publish', 'closed', 'closed', '', 'russian-federation', '', '', '2018-04-28 12:27:37', '2018-04-28 12:27:37', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=183', 0, 'country', '', 0),
 (184, 1, '2018-04-28 12:27:52', '2018-04-28 12:27:52', '', 'Rwanda', '', 'publish', 'closed', 'closed', '', 'rwanda', '', '', '2018-04-28 12:27:52', '2018-04-28 12:27:52', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=184', 0, 'country', '', 0),
-(185, 1, '2018-04-28 12:28:04', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:28:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=185', 0, 'country', '', 0),
 (186, 1, '2018-04-28 12:28:51', '2018-04-28 12:28:51', '', 'Saint Kitts and Nevis', '', 'publish', 'closed', 'closed', '', 'saint-kitts-and-nevis', '', '', '2018-04-28 12:28:51', '2018-04-28 12:28:51', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=186', 0, 'country', '', 0),
 (187, 1, '2018-04-28 12:29:42', '2018-04-28 12:29:42', '', 'Saint Lucia', '', 'publish', 'closed', 'closed', '', 'saint-lucia', '', '', '2018-04-28 12:29:42', '2018-04-28 12:29:42', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=187', 0, 'country', '', 0),
 (188, 1, '2018-04-28 12:30:00', '2018-04-28 12:30:00', '', 'Saint Vincent and the Grenadines', '', 'publish', 'closed', 'closed', '', 'saint-vincent-and-the-grenadines', '', '', '2018-04-28 12:30:00', '2018-04-28 12:30:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=188', 0, 'country', '', 0),
@@ -1195,18 +1302,16 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (207, 1, '2018-04-28 12:36:33', '2018-04-28 12:36:33', '', 'Suriname', '', 'publish', 'closed', 'closed', '', 'suriname', '', '', '2018-04-28 12:36:33', '2018-04-28 12:36:33', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=207', 0, 'country', '', 0),
 (208, 1, '2018-04-28 12:36:54', '2018-04-28 12:36:54', '', 'Swaziland', '', 'publish', 'closed', 'closed', '', 'swaziland', '', '', '2018-04-28 12:36:54', '2018-04-28 12:36:54', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=208', 0, 'country', '', 0),
 (209, 1, '2018-04-28 12:37:11', '2018-04-28 12:37:11', '', 'Sweden', '', 'publish', 'closed', 'closed', '', 'sweden', '', '', '2018-04-28 12:37:11', '2018-04-28 12:37:11', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=209', 0, 'country', '', 0),
-(210, 1, '2018-04-28 12:37:50', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:37:50', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=210', 0, 'country', '', 0),
 (211, 1, '2018-04-28 12:38:16', '2018-04-28 12:38:16', '', 'Switzerland', '', 'publish', 'closed', 'closed', '', 'switzerland', '', '', '2018-04-28 12:38:16', '2018-04-28 12:38:16', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=211', 0, 'country', '', 0),
 (212, 1, '2018-04-28 12:38:33', '2018-04-28 12:38:33', '', 'Syrian Arab Republic', '', 'publish', 'closed', 'closed', '', 'syrian-arab-republic', '', '', '2018-04-28 12:38:33', '2018-04-28 12:38:33', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=212', 0, 'country', '', 0),
-(213, 1, '2018-04-28 12:38:47', '2018-04-28 12:38:47', '', 'Tajikistan', '', 'publish', 'closed', 'closed', '', 'tajikistan', '', '', '2018-04-28 12:38:47', '2018-04-28 12:38:47', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=213', 0, 'country', '', 0);
-INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
+(213, 1, '2018-04-28 12:38:47', '2018-04-28 12:38:47', '', 'Tajikistan', '', 'publish', 'closed', 'closed', '', 'tajikistan', '', '', '2018-04-28 12:38:47', '2018-04-28 12:38:47', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=213', 0, 'country', '', 0),
 (214, 1, '2018-04-28 12:38:58', '2018-04-28 12:38:58', '', 'Thailand', '', 'publish', 'closed', 'closed', '', 'thailand', '', '', '2018-04-28 12:38:58', '2018-04-28 12:38:58', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=214', 0, 'country', '', 0),
 (215, 1, '2018-04-28 12:39:17', '2018-04-28 12:39:17', '', 'The Former Yugoslav Republic of Macedonia', '', 'publish', 'closed', 'closed', '', 'the-former-yugoslav-republic-of-macedonia', '', '', '2018-04-28 12:39:17', '2018-04-28 12:39:17', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=215', 0, 'country', '', 0),
 (216, 1, '2018-04-28 12:39:25', '2018-04-28 12:39:25', '', 'Timor-Leste', '', 'publish', 'closed', 'closed', '', 'timor-leste', '', '', '2018-04-28 12:39:25', '2018-04-28 12:39:25', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=216', 0, 'country', '', 0),
 (217, 1, '2018-04-28 12:39:35', '2018-04-28 12:39:35', '', 'Togo', '', 'publish', 'closed', 'closed', '', 'togo', '', '', '2018-04-28 12:39:35', '2018-04-28 12:39:35', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=217', 0, 'country', '', 0),
 (218, 1, '2018-04-28 12:39:47', '2018-04-28 12:39:47', '', 'Tonga', '', 'publish', 'closed', 'closed', '', 'tonga', '', '', '2018-04-28 12:39:47', '2018-04-28 12:39:47', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=218', 0, 'country', '', 0),
-(219, 1, '2018-04-28 12:40:00', '2018-04-28 12:40:00', '', 'Trinidad and Tobago', '', 'publish', 'closed', 'closed', '', 'trinidad-and-tobago', '', '', '2018-04-28 12:40:00', '2018-04-28 12:40:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=219', 0, 'country', '', 0),
-(220, 1, '2018-04-28 12:40:08', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:40:08', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=220', 0, 'country', '', 0),
+(219, 1, '2018-04-28 12:40:00', '2018-04-28 12:40:00', '', 'Trinidad and Tobago', '', 'publish', 'closed', 'closed', '', 'trinidad-and-tobago', '', '', '2018-04-28 12:40:00', '2018-04-28 12:40:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=219', 0, 'country', '', 0);
+INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (221, 1, '2018-04-28 12:40:42', '2018-04-28 12:40:42', '', 'Tunisia', '', 'publish', 'closed', 'closed', '', 'tunisia', '', '', '2018-04-28 12:40:42', '2018-04-28 12:40:42', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=221', 0, 'country', '', 0),
 (222, 1, '2018-04-28 12:40:55', '2018-04-28 12:40:55', '', 'Turkey', '', 'publish', 'closed', 'closed', '', 'turkey', '', '', '2018-04-28 12:40:55', '2018-04-28 12:40:55', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=222', 0, 'country', '', 0),
 (223, 1, '2018-04-28 12:41:17', '2018-04-28 12:41:17', '', 'Turkmenistan', '', 'publish', 'closed', 'closed', '', 'turkmenistan', '', '', '2018-04-28 12:41:17', '2018-04-28 12:41:17', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=223', 0, 'country', '', 0),
@@ -1215,7 +1320,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (226, 1, '2018-04-28 12:41:56', '2018-04-28 12:41:56', '', 'Ukraine', '', 'publish', 'closed', 'closed', '', 'ukraine', '', '', '2018-04-28 12:41:56', '2018-04-28 12:41:56', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=226', 0, 'country', '', 0),
 (227, 1, '2018-04-28 12:42:21', '2018-04-28 12:42:21', '', 'United Arab Emirates', '', 'publish', 'closed', 'closed', '', 'united-arab-emirates', '', '', '2018-04-28 12:42:21', '2018-04-28 12:42:21', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=227', 0, 'country', '', 0),
 (228, 1, '2018-04-28 12:42:36', '2018-04-28 12:42:36', '', 'United Kingdom', '', 'publish', 'closed', 'closed', '', 'united-kingdom', '', '', '2018-04-28 12:42:36', '2018-04-28 12:42:36', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=228', 0, 'country', '', 0),
-(229, 1, '2018-04-28 12:42:53', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-04-28 12:42:53', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=country&p=229', 0, 'country', '', 0),
 (230, 1, '2018-04-28 12:44:33', '2018-04-28 12:44:33', '', 'United Republic of Tanzania', '', 'publish', 'closed', 'closed', '', 'united-republic-of-tanzania', '', '', '2018-04-28 12:44:33', '2018-04-28 12:44:33', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=230', 0, 'country', '', 0),
 (231, 1, '2018-04-28 12:44:42', '2018-04-28 12:44:42', '', 'United States of America', '', 'publish', 'closed', 'closed', '', 'united-states-of-america', '', '', '2018-04-28 12:44:42', '2018-04-28 12:44:42', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=231', 0, 'country', '', 0),
 (232, 1, '2018-04-28 12:44:52', '2018-04-28 12:44:52', '', 'Uruguay', '', 'publish', 'closed', 'closed', '', 'uruguay', '', '', '2018-04-28 12:44:52', '2018-04-28 12:44:52', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=232', 0, 'country', '', 0),
@@ -1226,9 +1330,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (237, 1, '2018-04-28 12:46:37', '2018-04-28 12:46:37', '', 'Yemen', '', 'publish', 'closed', 'closed', '', 'yemen', '', '', '2018-04-28 12:46:37', '2018-04-28 12:46:37', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=237', 0, 'country', '', 0),
 (238, 1, '2018-04-28 12:47:08', '2018-04-28 12:47:08', '', 'Zambia', '', 'publish', 'closed', 'closed', '', 'zambia', '', '', '2018-04-28 12:47:08', '2018-04-28 12:47:08', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=238', 0, 'country', '', 0),
 (239, 1, '2018-04-28 12:47:21', '2018-04-28 12:47:21', '', 'Zimbabwe', '', 'publish', 'closed', 'closed', '', 'zimbabwe', '', '', '2018-04-29 17:27:21', '2018-04-29 17:27:21', '', 0, 'http://localhost/KiitMun18/?post_type=country&#038;p=239', 0, 'country', '', 0),
-(240, 1, '2018-04-28 18:01:25', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2018-04-28 18:01:25', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?p=240', 0, 'post', '', 0),
-(241, 1, '2018-04-28 18:06:56', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2018-04-28 18:06:56', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?p=241', 0, 'post', '', 0),
-(242, 1, '2018-04-29 21:21:30', '2018-04-29 21:21:30', '', 'Registrations', '', 'publish', 'closed', 'closed', '', 'registrations-2', '', '', '2018-04-29 21:21:30', '2018-04-29 21:21:30', '', 0, 'http://localhost/KiitMun18/?page_id=242', 0, 'page', '', 0),
+(242, 1, '2018-04-29 21:21:30', '2018-04-29 21:21:30', '', 'Registrations', '', 'publish', 'closed', 'closed', '', 'registrations', '', '', '2018-05-05 14:21:43', '2018-05-05 14:21:43', '', 0, 'http://localhost/KiitMun18/?page_id=242', 0, 'page', '', 0),
 (243, 1, '2018-04-29 21:21:30', '2018-04-29 21:21:30', '', 'Registrations', '', 'inherit', 'closed', 'closed', '', '242-revision-v1', '', '', '2018-04-29 21:21:30', '2018-04-29 21:21:30', '', 242, 'http://localhost/KiitMun18/2018/04/29/242-revision-v1/', 0, 'revision', '', 0),
 (244, 1, '2018-05-01 17:44:24', '2018-05-01 17:44:24', '', '23213384_747947142069773_5353532491711064836_o', '', 'inherit', 'open', 'closed', '', '23213384_747947142069773_5353532491711064836_o', '', '', '2018-05-01 17:44:24', '2018-05-01 17:44:24', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23213384_747947142069773_5353532491711064836_o.jpg', 0, 'attachment', 'image/jpeg', 0),
 (245, 1, '2018-05-01 17:44:27', '2018-05-01 17:44:27', '', '23270371_747947488736405_122483572637752744_o', '', 'inherit', 'open', 'closed', '', '23270371_747947488736405_122483572637752744_o', '', '', '2018-05-01 17:44:27', '2018-05-01 17:44:27', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23270371_747947488736405_122483572637752744_o.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -1262,7 +1364,20 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (277, 1, '2018-05-03 12:42:15', '2018-05-03 12:42:15', '', '23333910_750281305169690_7212381728359913249_o', '', 'inherit', 'open', 'closed', '', '23333910_750281305169690_7212381728359913249_o', '', '', '2018-05-03 12:42:15', '2018-05-03 12:42:15', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23333910_750281305169690_7212381728359913249_o.jpg', 0, 'attachment', 'image/jpeg', 0),
 (278, 1, '2018-05-03 12:42:18', '2018-05-03 12:42:18', '', '23415381_749963848534769_6175899308093996118_o', '', 'inherit', 'open', 'closed', '', '23415381_749963848534769_6175899308093996118_o', '', '', '2018-05-03 12:42:18', '2018-05-03 12:42:18', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23415381_749963848534769_6175899308093996118_o.jpg', 0, 'attachment', 'image/jpeg', 0),
 (279, 1, '2018-05-03 12:42:20', '2018-05-03 12:42:20', '', '23509229_750746758456478_7400223089167350741_o', '', 'inherit', 'open', 'closed', '', '23509229_750746758456478_7400223089167350741_o', '', '', '2018-05-03 12:42:20', '2018-05-03 12:42:20', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23509229_750746758456478_7400223089167350741_o.jpg', 0, 'attachment', 'image/jpeg', 0),
-(280, 1, '2018-05-03 12:42:22', '2018-05-03 12:42:22', '', '23509356_750391808491973_5902390836740344430_o', '', 'inherit', 'open', 'closed', '', '23509356_750391808491973_5902390836740344430_o', '', '', '2018-05-03 12:42:22', '2018-05-03 12:42:22', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23509356_750391808491973_5902390836740344430_o.jpg', 0, 'attachment', 'image/jpeg', 0);
+(280, 1, '2018-05-03 12:42:22', '2018-05-03 12:42:22', '', '23509356_750391808491973_5902390836740344430_o', '', 'inherit', 'open', 'closed', '', '23509356_750391808491973_5902390836740344430_o', '', '', '2018-05-03 12:42:22', '2018-05-03 12:42:22', '', 0, 'http://localhost/KiitMun18/wp-content/uploads/2018/05/23509356_750391808491973_5902390836740344430_o.jpg', 0, 'attachment', 'image/jpeg', 0),
+(281, 1, '2018-05-05 14:28:40', '2018-05-05 14:28:40', '', 'Sponsors', '', 'publish', 'closed', 'closed', '', 'sponsors', '', '', '2018-05-05 14:28:40', '2018-05-05 14:28:40', '', 0, 'http://localhost/KiitMun18/?page_id=281', 0, 'page', '', 0),
+(282, 1, '2018-05-05 14:28:40', '2018-05-05 14:28:40', '', 'Sponsors', '', 'inherit', 'closed', 'closed', '', '281-revision-v1', '', '', '2018-05-05 14:28:40', '2018-05-05 14:28:40', '', 281, 'http://localhost/KiitMun18/2018/05/05/281-revision-v1/', 0, 'revision', '', 0),
+(283, 1, '2018-05-05 14:45:51', '2018-05-05 14:45:51', '', 'The United Nations Ocean Conference ( UN Ocean )', '', 'publish', 'closed', 'closed', '', 'un-ocean', '', '', '2018-05-05 14:57:30', '2018-05-05 14:57:30', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=283', 0, 'committee', '', 0),
+(284, 1, '2018-05-05 14:45:55', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-05-05 14:45:55', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=committee&p=284', 0, 'committee', '', 0),
+(285, 1, '2018-05-05 14:47:16', '2018-05-05 14:47:16', '', 'United Nations General Assembly Emergency Special Session ( ESS )', '', 'publish', 'closed', 'closed', '', 'united-nations-general-assembly-emergency-special-session-ess', '', '', '2018-05-05 14:57:15', '2018-05-05 14:57:15', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=285', 0, 'committee', '', 0),
+(286, 1, '2018-05-05 14:47:57', '2018-05-05 14:47:57', '', 'United nations Commission On Narcotic Drugs ( UNCND )', '', 'publish', 'closed', 'closed', '', 'united-nations-commission-on-narcotic-drugs-uncnd', '', '', '2018-05-05 14:57:12', '2018-05-05 14:57:12', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=286', 0, 'committee', '', 0),
+(287, 1, '2018-05-05 14:49:01', '2018-05-05 14:49:01', '', 'United Nations Commission On the Status Of Women ( UNCSW )', '', 'publish', 'closed', 'closed', '', 'united-nations-commission-on-the-status-of-women', '', '', '2018-05-05 14:57:05', '2018-05-05 14:57:05', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=287', 0, 'committee', '', 0),
+(288, 1, '2018-05-05 14:49:32', '2018-05-05 14:49:32', '', 'International Organization for Migration ( IMO )', '', 'publish', 'closed', 'closed', '', 'international-organization-for-migration', '', '', '2018-05-05 14:56:42', '2018-05-05 14:56:42', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=288', 0, 'committee', '', 0),
+(289, 1, '2018-05-05 14:50:19', '2018-05-05 14:50:19', '', 'Organisation For The Prohibition of Chemical Weapons ( OPCW )', '', 'publish', 'closed', 'closed', '', 'organisation-for-the-prohibition-of-chemical-weapons-opcw', '', '', '2018-05-05 14:56:31', '2018-05-05 14:56:31', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=289', 0, 'committee', '', 0),
+(290, 1, '2018-05-05 14:50:56', '2018-05-05 14:50:56', '', 'United Nations Social, Humanitarian and Cultural Committee ( SOCHUM )', '', 'publish', 'closed', 'closed', '', 'united-nations-general-assembly-sochum', '', '', '2018-05-05 14:56:25', '2018-05-05 14:56:25', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=290', 0, 'committee', '', 0),
+(291, 1, '2018-05-05 14:51:00', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-05-05 14:51:00', '0000-00-00 00:00:00', '', 0, 'http://localhost/KiitMun18/?post_type=committee&p=291', 0, 'committee', '', 0),
+(292, 1, '2018-05-05 14:52:39', '2018-05-05 14:52:39', '', 'United Nations Special Political and Decolonization Committee ( SPECPOL )', '', 'publish', 'closed', 'closed', '', 'united-nations-special-political-and-decolonization-committee-specpol', '', '', '2018-05-05 14:55:55', '2018-05-05 14:55:55', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=292', 0, 'committee', '', 0),
+(293, 1, '2018-05-05 14:53:28', '2018-05-05 14:53:28', '', 'United Nations Disarmament and International Security Committee ( DISEC )', '', 'publish', 'closed', 'closed', '', 'united-nations-disarmament-and-international-security-committee-disec', '', '', '2018-05-05 14:55:32', '2018-05-05 14:55:32', '', 0, 'http://localhost/KiitMun18/?post_type=committee&#038;p=293', 0, 'committee', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1391,7 +1506,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:2:{s:64:\"41361cdaba0d4291d13ae134a12d737508af4078065422249c777d74c98490cc\";a:4:{s:10:\"expiration\";i:1525558245;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\";s:5:\"login\";i:1525385445;}s:64:\"f5552f6d3e2aceed6da821eee8f3327caaff156688ad59d5ec1544458dd981c8\";a:4:{s:10:\"expiration\";i:1525559090;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\";s:5:\"login\";i:1525386290;}}'),
+(16, 1, 'session_tokens', 'a:1:{s:64:\"5fb5cc4c13eeecb77bd158698d87a596741b1ff06e7a9221e46e1041cb8f3ff1\";a:4:{s:10:\"expiration\";i:1525733111;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\";s:5:\"login\";i:1525560311;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '3'),
 (18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:2:\"::\";}'),
 (19, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}'),
@@ -1435,15 +1550,27 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 --
+-- Indexes for table `registration_double_delegation`
+--
+ALTER TABLE `registration_double_delegation`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `registration_form`
 --
 ALTER TABLE `registration_form`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `userlist`
+-- Indexes for table `registration_ip`
 --
-ALTER TABLE `userlist`
+ALTER TABLE `registration_ip`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registration_single_delegation`
+--
+ALTER TABLE `registration_single_delegation`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1550,15 +1677,25 @@ ALTER TABLE `wp_users`
 --
 
 --
+-- AUTO_INCREMENT for table `registration_double_delegation`
+--
+ALTER TABLE `registration_double_delegation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `registration_form`
 --
 ALTER TABLE `registration_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
--- AUTO_INCREMENT for table `userlist`
+-- AUTO_INCREMENT for table `registration_ip`
 --
-ALTER TABLE `userlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `registration_ip`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `registration_single_delegation`
+--
+ALTER TABLE `registration_single_delegation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `wp_commentmeta`
 --
@@ -1578,17 +1715,17 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=764;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=794;
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=281;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=294;
 --
 -- AUTO_INCREMENT for table `wp_termmeta`
 --

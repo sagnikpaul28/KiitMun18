@@ -97,7 +97,7 @@ function dwwp_meta_save($post_id){
 		if (!isset($_POST['countrylist'])){
 			return;
 		}
-		$countrylist = implode(" ", $_POST['countrylist']);
+		$countrylist = implode(",", $_POST['countrylist']);
 		if ($countrylist === ''){
 			$countrylist = " None ";
 		}

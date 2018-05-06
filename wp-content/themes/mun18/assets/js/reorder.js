@@ -1,13 +1,10 @@
 jQuery(document).ready(function(){
 	var sortlist = jQuery('ul#custom-type-list');
-	var animation = jQuery('#loading-animation');
 	var pageTitle = jQuery('div h2');
-	animation.hide();
 
 	sortlist.sortable({
 
 		update: function(event, ui){
-			animation.show();
 
 			jQuery.ajax({
 				url: ajaxurl,
@@ -19,7 +16,6 @@ jQuery(document).ready(function(){
 					security: WP_REGISTRATIONS_FIELD_LISTING.security
 				},
 				success: function(response){
-					animation.hide();
 					if (true == response.success){
 						pageTitle.after('<div class="updated"><p>'+WP_REGISTRATIONS_FIELD_LISTING.success+'</p></div>');
 					}else{
@@ -27,7 +23,6 @@ jQuery(document).ready(function(){
 					}
 				},
 				error: function(error){
-					animation.hide();
 					pageTitle.after('<div class="error"><p>'+WP_REGISTRATIONS_FIELD_LISTING.failure+'</p></div>');
 				}
 			});

@@ -84,13 +84,13 @@ div.admin-registration-form-select-other-details-checkbox-radio-select, div.admi
 	float: left;
 	padding: 2.5px 0;
 }
-.panel div:last-child{
+.panel.registrations div:last-child{
 	display: block;
 	width: auto;
 	margin: 5px;
 }
 @media screen and (max-width: 768px){
-	.panel div{
+	.panel.registrations div{
 		width: 100%;
 	}
 }
