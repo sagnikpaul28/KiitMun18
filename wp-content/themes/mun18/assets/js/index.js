@@ -278,4 +278,16 @@ jQuery(document).ready(function(){
 //Clear Post methods to resubmit on refresh
 if ( window.history.replaceState ) {
       window.history.replaceState( null, null, window.location.href );
-  }
+}
+
+//Header and Footer on Pages With Less Content
+var height1 = jQuery(window).height();
+var height2 = jQuery(document).height();
+
+if (height1 === height2){
+  jQuery(".navbar").css({'background-color':'white', 'position':'relative'});
+  jQuery(".menu-item a").css({'color':'black'});
+  jQuery('.dropdown-menu>li>a').css({'color':'black', 'text-shadow': '0 0 20px #000'});
+  jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(255,255,255,0.95)', 'border':'0'});
+  jQuery('.footer-copyright').css({'position':'fixed', 'bottom':'0', 'width':'100%'});
+}

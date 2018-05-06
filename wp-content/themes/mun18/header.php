@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:500,700,900" rel="stylesheet">
     </head>
     <body>
-        <!--nav class="navbar">
+        <?php if (!is_front_page()){ ?>
+        <nav class="navbar">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -25,7 +26,5 @@
                 <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => 'false', 'menu_class' => 'nav navbar-nav navbar-right', 'walker' => new Walker_Nav_Primary)); ?>
                 
             </div>
-                
-                
-
-        </nav-->
+        </nav>
+        <?php } ?>
