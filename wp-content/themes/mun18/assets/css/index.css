@@ -201,7 +201,7 @@ li.menu-item{
 
 #beta-second{
     text-align: center;
-    padding: 20vh 15vw;
+    padding: 20vh 5vw 10vh;
 }
 #beta-second .first {
     font-weight: 900;
@@ -211,6 +211,7 @@ li.menu-item{
     text-transform: uppercase;
 }
 #beta-second .second {
+    padding: 0 5vmin;
     border-bottom: 2px solid #ddd;
     letter-spacing: 2px;
     line-height: 1em;
@@ -228,14 +229,16 @@ li.menu-item{
     width: 50px !important;
 }
 #beta-second .third {
+    text-align: justify;
     color: #aeaeae;
     display: block;
     font-size: 15px;
     font-weight: 500;
+    padding: 0 7.5vmin;
 }
 @media screen and (max-width: 768px){
     #beta-second{
-        padding: 20vh 10px;
+        padding: 20vh 5vw 5vh;
     }
     #beta-second .first{
         font-size: 20px;
@@ -243,6 +246,9 @@ li.menu-item{
     #beta-second .second{
         font-size: 35px;
         width: 100%;
+    }
+    #beta-second .third{
+        padding: 0;
     }
 }
 
@@ -417,7 +423,8 @@ li.menu-item{
 }
 @media screen and (max-width: 768px){
     #beta-fifth > span{
-        padding: 10px 20px;
+        padding: 10px 0;
+        margin: 0 2vw 30px;
     }
     #beta-fifth div.row{
         padding: 0;
@@ -427,16 +434,18 @@ li.menu-item{
     }
 }
 
-
-
 #beta-sixth{
-    padding-top: 10vh;
+    padding: 10vh 2vw 0;
+    display: inline-block;
 }
-#beta-sixth iframe{
-    height: 90vh;
-    width: 100%;
+#beta-sixth  div > p{
+    color: #aeaeae;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
 }
-#beta-sixth h1{
+#beta-sixth h2{
     width: max-content;
     text-align: center;
     text-transform: uppercase;
@@ -450,7 +459,106 @@ li.menu-item{
     border-top: 10px solid #00c2e5 !important;
     width: 50px !important;
 }
-#beta-sixth span{
+@media screen and (max-width: 768px){
+    #beta-sixth {
+        padding: 10vh 5vw 0;
+    }
+    #beta-sixth div.col-xs-12{
+        padding: 0;
+    }
+}
+
+
+#beta-seventh{
+    padding: 10vmin 10vmin 0;
+}
+#beta-seventh h1{
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+#beta-seventh hr{
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;
+    border-top: 10px solid #00c2e5 !important;
+    width: 50px !important;
+}
+#beta-seventh > span{
+    color: #aeaeae;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0 5% 30px;
+}
+@media screen and (max-width: 768px){
+    #beta-seventh{
+        padding: 10vh 5vw 0;
+    }
+    #beta-seventh > span{
+        margin: 0;
+    }
+}
+
+#beta-eighth{
+    padding: 10vmin 10vmin 0;
+}
+#beta-eighth h1{
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+#beta-eighth hr{
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;
+    border-top: 10px solid #00c2e5 !important;
+    width: 50px !important;
+}
+#beta-eighth > span{
+    color: #aeaeae;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0 5% 30px;
+}
+@media screen and (max-width: 768px){
+    #beta-eighth{
+        padding: 10vh 5vw 0;
+    }
+    #beta-eighth > span{
+        margin: 0;
+    }
+}
+
+#beta-ninth{
+    padding-top: 10vh;
+}
+#beta-ninth iframe{
+    height: 90vh;
+    width: 100%;
+}
+#beta-ninth h1{
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+#beta-ninth hr{
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;
+    border-top: 10px solid #00c2e5 !important;
+    width: 50px !important;
+}
+#beta-ninth span{
     color: #aeaeae;
     display: block;
     font-size: 15px;
