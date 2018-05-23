@@ -11,7 +11,6 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:500,700,900" rel="stylesheet">
     </head>
     <body>
-        <?php if (!is_front_page()){ ?>
         <nav class="navbar">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar">
@@ -20,6 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="<?php echo get_home_url(); ?> " style="display: none;"> <img src="<?php echo wp_get_attachment_url(259); ?>"> </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse navbar-right" style="padding: 15px;">
                 
@@ -27,4 +27,3 @@
                 
             </div>
         </nav>
-        <?php } ?>

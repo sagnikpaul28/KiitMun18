@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Beta Page */
+/*Template Name: Home Page */
 get_header();
 ?>
 
@@ -53,7 +53,6 @@ get_header();
 
 	    </div>
 
-	    <!-- Left and right controls -->
 	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 	      	<span class="glyphicon glyphicon-chevron-left"></span>
 	      	<span class="sr-only">Previous</span>
@@ -83,24 +82,9 @@ get_header();
 		<?php endwhile;
 	endif;
 	?>
-	<br/><br/>
-	<?php 
-	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('Home Page Previous Editions Details'));
-	$loop = new Wp_Query($args);
-
-	if ($loop->have_posts()):
-		while ($loop->have_posts()): $loop->the_post(); ?>
-
-		<span class="first">Previous</span>
-		<span class="second">Editions</span>
-		<hr>
-		<span class="third"><?php echo get_the_content(); ?></span>
-
-		<?php endwhile;
-	endif;
-	?>
-
+	
 </section>
+
 <!--section id="beta-third">
 	<h1>Founder's <b>Message</b></h1>
 	<hr>
@@ -193,71 +177,6 @@ get_header();
 			<hr>
 		</div>
 	</div>
-</section>
-
-<section id="beta-sixth">
-	<center>
-		<div class="col-xs-12 col-sm-6">
-			<h2>About <b>KIIT</b></h2>
-			<hr>
-			<?php 
-			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIIT"));
-			$loop = new Wp_Query($args);
-
-			if ($loop -> have_posts()):
-				while ($loop->have_posts()): $loop->the_post(); ?>
-					<p><?php echo get_the_content(); ?></p>
-				<?php endwhile;
-			endif;
-			?>
-			
-		</div>
-		<div class="col-xs-12 col-sm-6">
-			<h2>About <b>KISS</b></h2>
-			<hr>
-			<?php 
-			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIIT"));
-			$loop = new Wp_Query($args);
-
-			if ($loop -> have_posts()):
-				while ($loop->have_posts()): $loop->the_post(); ?>
-					<p><?php echo get_the_content(); ?></p>
-				<?php endwhile;
-			endif;
-			?>
-
-		</div>
-	</center>
-</section>
-
-<section id="beta-seventh">
-	<h1>About <br/><b>Incredible India</b></h1>
-	<hr>
-	<?php 
-	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About Incredible India"));
-	$loop = new Wp_Query($args);
-
-	if ($loop -> have_posts()):
-		while ($loop->have_posts()): $loop->the_post(); ?>
-			<span><?php echo get_the_content(); ?></span>
-		<?php endwhile;
-	endif;
-	?>
-</section>
-
-<section id="beta-eighth">
-	<h1>About<br/>KIITMUN <b>Society</b></h1>
-	<hr>
-	<?php 
-	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIITMUN Society"));
-	$loop = new Wp_Query($args);
-
-	if ($loop -> have_posts()):
-		while ($loop->have_posts()): $loop->the_post(); ?>
-			<span><?php echo get_the_content(); ?></span>
-		<?php endwhile;
-	endif;
-	?>
 </section>
 
 

@@ -36,18 +36,31 @@ var x = setInterval(function() {
 //Navbar Show and Hide
 jQuery(document).ready(function(){
   var height = jQuery(window).height();
+  var width = jQuery(window).width();
 
   jQuery(window).scroll(function(){
-    if (jQuery(window).scrollTop() > height/2){
+    if (jQuery(window).scrollTop() > 30){
       jQuery(".navbar").css({'background-color':'white'});
       jQuery(".menu-item a").css({'color':'black'});
       jQuery('.dropdown-menu>li>a').css({'color':'black', 'text-shadow': '0 0 20px #000'});
       jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(255,255,255,0.95)', 'border':'0'});
+      jQuery('.navbar-toggle').css({'border': '1px solid #00c2e5'});
+      jQuery('.navbar-toggle .icon-bar').css({'background-color': '#00c2e5'});
+      if (width<= 768){
+        jQuery('.navbar-right').css({'background-color': 'white'});
+      }
     }else{
       jQuery(".navbar").css({'background-color':'transparent'});
       jQuery(".menu-item a").css({'color':'white'});
       jQuery('.dropdown-menu>li>a').css({'color':'white','text-shadow': '0 0 20px #fff'});
       jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(0,0,0,0.15)', 'border':'1px solid #555'});
+      jQuery('.navbar-toggle').css({'border': '1px solid white'});
+      jQuery('.navbar-toggle .icon-bar').css({'background-color': 'white'});
+      if (width<= 768){
+        jQuery('.navbar-right').css({'background-color': 'rgba(0,0,0,0.55)'});
+      }else{
+        jQuery('.navbar-right').css({'background-color': 'transparent'});
+      }
     }  
   })
   
@@ -285,9 +298,5 @@ var height1 = jQuery(window).height();
 var height2 = jQuery(document).height();
 
 if (height1 === height2){
-  jQuery(".navbar").css({'background-color':'white', 'position':'relative'});
-  jQuery(".menu-item a").css({'color':'black'});
-  jQuery('.dropdown-menu>li>a').css({'color':'black', 'text-shadow': '0 0 20px #000'});
-  jQuery('.navbar-nav>li>.dropdown-menu').css({'background-color':'rgba(255,255,255,0.95)', 'border':'0'});
   jQuery('.footer-copyright').css({'position':'fixed', 'bottom':'0', 'width':'100%'});
 }
