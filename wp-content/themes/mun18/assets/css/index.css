@@ -721,6 +721,11 @@ h1#not-found{
     border-top: 10px solid #00c2e5 !important;
     width: 50px !important;
 }
+#about-third img{
+    width: 30%;
+    display: block;
+    margin: 0 auto 2.5vh;
+}
 @media screen and (max-width: 768px){
     #about-third {
         padding: 5vh 5vw 5vh;
@@ -973,4 +978,65 @@ h1#not-found{
     font-weight: 500;
     text-align: center;
     margin-bottom: 30px;
+}
+
+
+/*Gallery Page*/
+#gallery-first{
+    overflow: hidden;
+}
+#gallery-first .gallery-back {
+    max-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width: 769px){
+    #gallery-first .gallery-back img {
+        position: relative;
+        top: -18vh;
+    }
+}
+#gallery-first .gallery-back img {
+    width: 100%;
+    height: auto;
+}
+#gallery-first .gallery-back .layer {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+#gallery-first .gallery-back h1 {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+    font-size: 56px;
+}
+@media screen and (max-width: 768px){
+    #gallery-first .gallery-back h1 {
+        top: 0;
+        margin-top: 25%;
+        height: 50%;
+        font-size: 28px;
+    }
+}
+
+#gallery-second div.gallery-grid {
+    column-count: 3;
+    column-gap: 1.5em;
+}
+#gallery-second div.items{
+    display: inline-block;
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+#gallery-second img{
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
 }

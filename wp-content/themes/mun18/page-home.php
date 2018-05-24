@@ -8,7 +8,7 @@ get_header();
 	<div class="layer">
 		<img src="<?php echo wp_get_attachment_url(259); ?>">
 		<center>
-			<div class="timer">
+			<!--div class="timer">
 				<div class="days">
 					<div class='time'>00</div><p>days</p>
 				</div>
@@ -21,7 +21,8 @@ get_header();
 				<div class="seconds">
 					<div class='time'>00</div><p>secs</p>
 				</div>
-			</div>
+			</div-->
+			<h1 style="position: absolute;font-size: 4vmax;text-align: center;color: white;width: 100%;bottom: 5vh;">#TodayForTomorrow</h1>
 		</center>
 	</div>
 

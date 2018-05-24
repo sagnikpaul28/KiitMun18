@@ -38,6 +38,7 @@ get_header();
 		<div class="col-xs-12 col-sm-6">
 			<h2>About <b>KIIT</b></h2>
 			<hr>
+			<img src="<?php echo wp_get_attachment_url(321); ?>">
 			<?php 
 			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("About KIIT"));
 			$loop = new Wp_Query($args);
@@ -53,6 +54,7 @@ get_header();
 		<div class="col-xs-12 col-sm-6">
 			<h2>About <b>KISS</b></h2>
 			<hr>
+			<img src="<?php echo wp_get_attachment_url(322); ?>">
 			<?php 
 			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("About KIIT"));
 			$loop = new Wp_Query($args);
