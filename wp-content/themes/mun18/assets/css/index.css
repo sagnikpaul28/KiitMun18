@@ -23,6 +23,7 @@ a:hover{
 
 /*Navbar*/
 .navbar{
+    top: 0;
     border-top: 0;
     z-index: 10000;
     position: fixed;
@@ -1027,16 +1028,334 @@ h1#not-found{
 }
 
 #gallery-second div.gallery-grid {
+    margin-top: 10vmin;
     column-count: 3;
-    column-gap: 1.5em;
+    column-gap: 1em;
 }
-#gallery-second div.items{
+#gallery-second div.item{
     display: inline-block;
-    margin: 0 0 1.5em;
+    margin: 0 0 1em;
     overflow: hidden;
 }
 #gallery-second img{
     width: 100%;
     height: auto;
     transition: 0.3s;
+}
+#gallery-second div.item:hover img{
+    transform: scale(1.25);
+    transition: 0.4s;
+}
+@media screen and (max-width: 768px){
+    #gallery-second div.gallery-grid {
+        column-count: 1;
+        column-gap: 1em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+/*Committees Page*/
+#committees-first{
+    overflow: hidden;
+}
+#committees-first .committees-back {
+    max-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width: 769px){
+    #committees-first .committees-back img {
+        position: relative;
+        top: -18vh;
+    }
+}
+#committees-first .committees-back img {
+    width: 100%;
+    height: auto;
+}
+#committees-first .committees-back .layer {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+#committees-first .committees-back h1 {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+    font-size: 56px;
+}
+@media screen and (max-width: 768px){
+    #committees-first .committees-back h1 {
+        top: 0;
+        margin-top: 25%;
+        height: 50%;
+        font-size: 28px;
+    }
+}
+#committees-second{
+    padding: 5vmin;
+}
+#committees-second .row{
+    margin: 0;
+}
+#committees-second h1{
+    font-size: 3em;
+}
+#committees-second hr:nth-of-type(1){
+    width: 50%;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    z-index: -1;
+    left: 5vmin;
+    margin-top: 0;
+}
+#committees-second hr:nth-of-type(2){
+    width: 5%;
+    border-top: 10px solid #00c2e5;
+    margin-top: -4px;
+    float: left;
+    margin-right: 95%;
+    margin-bottom: 25px;
+}
+#committees-second img{
+    width: 60%;
+    margin: 0% 20% 2%;
+}
+#committees-second p{
+    font-size: 1.2em;
+    text-align: justify;
+}
+@media screen and (max-width: 768px){
+    #committees-second h1{
+        font-size: 1.75em;
+    }
+    #committees-second hr:nth-of-type(1){
+        width: 60%;
+    }
+    #committees-second hr:nth-of-type(2){
+        width: 20%;
+        margin-right: 80%;
+    }
+    #committees-second img{
+        width: 80%;
+        margin: 0% 10% 2%;
+    }
+    #committees-second p{
+        text-align: left;
+    }
+}
+
+/*Blogs Page*/
+
+#blogs-first{
+    overflow: hidden;
+}
+#blogs-first .blogs-back {
+    max-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width: 769px){
+    #blogs-first .blogs-back img {
+        position: relative;
+        top: -18vh;
+    }
+}
+#blogs-first .blogs-back img {
+    width: 100%;
+    height: auto;
+}
+#blogs-first .blogs-back .layer {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+#blogs-first .blogs-back h1 {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+    font-size: 56px;
+}
+@media screen and (max-width: 768px){
+    #blogs-first .blogs-back h1 {
+        top: 0;
+        margin-top: 25%;
+        height: 50%;
+        font-size: 28px;
+    }
+}
+#blogs-second div.blogs-container.page-container{
+    padding-top: 5vmin;
+}
+#blogs-second div.blogs-container h1{
+    text-align: center;
+    color: #00c2e5;
+}
+#blogs-second div.blogs-container .blogs-grid .blogs img{
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+#blogs-second div.blogs-container .blogs-grid .blogs-image{
+    overflow: hidden;
+}
+#blogs-second div.blogs-container .blogs-grid .blogs-image:hover img{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+#blogs-second div.blogs-container .blogs-text span:nth-of-type(1){
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+#blogs-second div.blogs-container .blogs-text span:nth-of-type(1) a{
+    cursor: pointer;
+    color: #00c2e5;
+}
+#blogs-second div.blogs-container .blogs-text span a:hover{
+    text-decoration: none;
+    color: #00c2e5;
+}
+#blogs-second div.blogs-container .blogs-text span:nth-of-type(2){
+    display: block;
+    font-size: 1em;
+    padding-top: 10px;
+}
+#blogs-second div.blogs-container .blogs hr{
+    width: 25%;
+    margin-left: 0;
+    border-bottom: 3px solid #00c2e5;
+    margin-bottom: 30px;
+}
+#blogs-second div.blogs-grid{
+    margin: 0;
+    column-count: 3;
+    column-gap: 1.5em;
+}
+#blogs-second div.blogs-grid div.blogs{
+    display: inline-block;
+    margin: 0 0 1em;
+    float: left;
+}
+#blogs-second div.blogs-grid div{
+    display: inline-block;
+}
+@media screen and (max-width: 768px){
+    #blogs-second div.blogs-grid{
+        column-count: 1;
+        column-gap: 1.5em;
+    }
+}
+
+/*Single Page*/
+#single div.container.single-container{
+    width: 95%;
+    padding-top: 25vmin;
+}
+#single div.single-container h1{
+    text-align: center;
+    color: red;
+}
+#single div.single-container .single-text{
+    display: inline-block;
+    width: 55%;
+    float: left;
+}
+#single div.single-container .single-image{
+    display: inline-block;
+    width: 45%;
+    float: right;
+}
+#single div.single-container .single-image img{
+    width: 95%;
+    margin: 2.5%;
+}
+#single div.single-container .single-text h2{
+    color: black;
+    font-size: 3em;
+    margin-top: 5vmin;
+    letter-spacing: -3px;
+    line-height: 100%;
+    font-weight: bold;
+}
+#single div.single-container .single-text h3{
+    line-height: 150%;
+    font-size: 1em;
+    margin-top: 2vmin;
+}
+#single div.single-container div.col-xs-6 span, #single .single-container div.col-xs-6 span a{
+    color: #00c2e5 !important;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#single div.single-container div.col-xs-6:nth-of-type(2) span{
+    float: right;
+    position: relative;
+}
+#single div.single-container span.single-date-time-icon, #single div.single-container span.single-author-icon{
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+#single div.single-container .single-text hr:nth-of-type(1){
+    width:60%; 
+    border-color: #00c2e5; 
+    margin-left: 0;
+}
+#single div.single-container .single-text hr:nth-of-type(2){
+    border-color: transparent; margin: 2px !important
+}
+#single div.blogs-single-container{
+    margin-top: 20px;
+}
+@media screen and (max-width: 768px){
+    #single div.single-container div.single-image img{
+        width: 100%;
+        margin: 10% 0 0;
+    }
+    #single div.single-container div.single-text, #single div.single-container div.single-image{
+        display: block;
+        width: 100%;
+    }
+    #single div.single-container .single-text h2{
+        margin: inherit;
+        font-size: 1.2em;
+        line-height: 100%;
+    }
+    #single div.single-container .single-text h3{
+        margin: inherit;
+        font-size: 1em;
+        line-height: 100%;
+        margin-bottom: 10px;
+    }
+    div.single-container div.col-xs-6 span, #single .single-container div.col-xs-6 span a{
+        font-size: 1em;
+    }
+    #single div.blogs-single-container{
+        padding: 0 !important;
+    }
+    #single div.single-container .single-text h2{
+        letter-spacing: 1px;
+    }
+}
+
+
+
+/*404 Page*/
+#error404-first{
+    margin-top: 25vh;
 }

@@ -27,7 +27,7 @@ function custom_post_types2(){
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'query_var' => true,
         'rewrite' => true,
         'capability_type' => 'post',
@@ -36,7 +36,7 @@ function custom_post_types2(){
             'title'
         ),
         'menu_position' => 5,
-        'exclude_from_search' => false
+        'exclude_from_search' => true
     );
 
     register_post_type('country', $args);

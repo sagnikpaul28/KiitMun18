@@ -37,9 +37,10 @@ var x = setInterval(function() {
 jQuery(document).ready(function(){
   var height = jQuery(window).height();
   var width = jQuery(window).width();
+  jQuery('.navbar-brand #img1').hide();
 
   jQuery(window).scroll(function(){
-    if (jQuery(window).scrollTop() > 30){
+    if (jQuery(window).scrollTop() > height/3){
       jQuery(".navbar").css({'background-color':'white'});
       jQuery(".menu-item a").css({'color':'black'});
       jQuery('.dropdown-menu>li>a').css({'color':'black', 'text-shadow': '0 0 20px #000'});
@@ -48,6 +49,8 @@ jQuery(document).ready(function(){
       jQuery('.navbar-toggle .icon-bar').css({'background-color': '#00c2e5'});
       if (width<= 768){
         jQuery('.navbar-right').css({'background-color': 'white'});
+        jQuery('.navbar-brand #img1').show();
+        jQuery('.navbar-brand #img2').hide();
       }
     }else{
       jQuery(".navbar").css({'background-color':'transparent'});
@@ -58,6 +61,8 @@ jQuery(document).ready(function(){
       jQuery('.navbar-toggle .icon-bar').css({'background-color': 'white'});
       if (width<= 768){
         jQuery('.navbar-right').css({'background-color': 'rgba(0,0,0,0.55)'});
+        jQuery('.navbar-brand #img2').show();
+        jQuery('.navbar-brand #img1').hide();
       }else{
         jQuery('.navbar-right').css({'background-color': 'transparent'});
       }
@@ -294,9 +299,20 @@ if ( window.history.replaceState ) {
 }
 
 //Header and Footer on Pages With Less Content
-var height1 = jQuery(window).height();
-var height2 = jQuery(document).height();
+jQuery(window).load(function(){
+  var height1 = jQuery(window).height();
+  var height2 = jQuery(document).height();
 
-if (height1 === height2){
-  jQuery('.footer-copyright').css({'position':'fixed', 'bottom':'0', 'width':'100%'});
-}
+  if (height1 === height2){
+    jQuery('.footer-copyright').css({'position':'fixed', 'bottom':'0', 'width':'100%'});
+  }
+})
+
+
+var markers = new OpenLayers.Layer.Markers( "Markers" );
+map.addLayer(markers);
+
+var size = new OpenLayers.Size(21,25);
+var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png', size, offset);
+markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(0,0),icon));

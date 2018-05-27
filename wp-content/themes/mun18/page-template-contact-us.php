@@ -85,7 +85,7 @@ if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['f
 <section id="contact-fourth">
 	<h1>Meet Us <b>Here</b></h1>
 	<hr>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.690726633949!2d85.81246791429672!3d20.354391315834036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19091813dab8d5%3A0xa033051ccddbbcbc!2sKiit+University!5e0!3m2!1sen!2sin!4v1525261017509" frameborder="0" style="border:0" allowfullscreen></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14962.559068831144!2d85.8136923465576!3d20.356495146139697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x85a345e1f4fcce86!2sKiiT+Student+Activity+Center-KSAC!5e0!3m2!1sen!2sin!4v1527423728493" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
 
 <?php get_footer(); ?>

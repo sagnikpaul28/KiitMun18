@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo get_home_url(); ?> " style="display: none;"> <img src="<?php echo wp_get_attachment_url(259); ?>"> </a>
+                <a class="navbar-brand" href="<?php echo get_home_url(); ?> " style="display: none;"> <img src="<?php echo wp_get_attachment_url(371); ?>" id="img1" style="display: none;"><img src="<?php echo wp_get_attachment_url(470); ?>" id="img2"> </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse navbar-right" style="padding: 15px;">
                 

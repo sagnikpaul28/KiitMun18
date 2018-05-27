@@ -27,16 +27,19 @@ function custom_post_types1(){
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'publicly_queryable' => true,
+        'publicly_queryable' => false,
         'query_var' => true,
         'rewrite' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
         'supports' => array(
-            'title'
+            'title',
+            'editor',
+            'revisions',
+            'thumbnail'
         ),
         'menu_position' => 5,
-        'exclude_from_search' => false
+        'exclude_from_search' => true
     );
 
     register_post_type('committee', $args);
