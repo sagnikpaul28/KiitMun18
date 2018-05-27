@@ -69,7 +69,7 @@ get_header();
 <section id="beta-second">
 	
 	<?php 
-	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('Home Page About KIIT Details'));
+	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('About KIITMUN'));
 	$loop = new Wp_Query($args);
 
 	if ($loop->have_posts()):

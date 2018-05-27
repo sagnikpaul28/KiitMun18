@@ -56,7 +56,7 @@ get_header();
 			<hr>
 			<img src="<?php echo wp_get_attachment_url(322); ?>">
 			<?php 
-			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("About KIIT"));
+			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("About KISS"));
 			$loop = new Wp_Query($args);
 
 			if ($loop -> have_posts()):
