@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Home Page */
+/*Template Name: Beta Page */
 get_header();
 ?>
 
@@ -8,7 +8,7 @@ get_header();
 	<div class="layer">
 		<img src="<?php echo wp_get_attachment_url(259); ?>">
 		<center>
-			<!--div class="timer">
+			<div class="timer">
 				<div class="days">
 					<div class='time'>00</div><p>days</p>
 				</div>
@@ -21,8 +21,7 @@ get_header();
 				<div class="seconds">
 					<div class='time'>00</div><p>secs</p>
 				</div>
-			</div-->
-			<h1 style="position: absolute;font-size: 4vmax;text-align: center;color: white;width: 100%;bottom: 5vh;">#TodayForTomorrow</h1>
+			</div>
 		</center>
 	</div>
 
@@ -54,6 +53,7 @@ get_header();
 
 	    </div>
 
+	    <!-- Left and right controls -->
 	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 	      	<span class="glyphicon glyphicon-chevron-left"></span>
 	      	<span class="sr-only">Previous</span>
@@ -69,7 +69,7 @@ get_header();
 <section id="beta-second">
 	
 	<?php 
-	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('About KIITMUN'));
+	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('Home Page About KIIT Details'));
 	$loop = new Wp_Query($args);
 
 	if ($loop->have_posts()):
@@ -83,9 +83,24 @@ get_header();
 		<?php endwhile;
 	endif;
 	?>
-	
-</section>
+	<br/><br/>
+	<?php 
+	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID('Home Page Previous Editions Details'));
+	$loop = new Wp_Query($args);
 
+	if ($loop->have_posts()):
+		while ($loop->have_posts()): $loop->the_post(); ?>
+
+		<span class="first">Previous</span>
+		<span class="second">Editions</span>
+		<hr>
+		<span class="third"><?php echo get_the_content(); ?></span>
+
+		<?php endwhile;
+	endif;
+	?>
+
+</section>
 <!--section id="beta-third">
 	<h1>Founder's <b>Message</b></h1>
 	<hr>
@@ -111,17 +126,6 @@ get_header();
 	*/?>
 </section-->
 
-
-
-<!--IMAGE of committees-->
-<section>
-	<a href="https://kiitmun.org/committees/"><img src="https://kiitmun.org/wp-content/uploads/2018/05/COMMITTEES_20.jpg" style="width:100%;height:auto;"></a>
-</section>
-
-<br><br><br>
-<section>
-	<img src="<?php echo wp_get_attachment_url(519); ?>" style="width:100%;height:auto;">
-</section>
 
 <section id="beta-fourth">
 	<h1>In Other <b>Media</b></h1>
@@ -191,11 +195,76 @@ get_header();
 	</div>
 </section>
 
+<section id="beta-sixth">
+	<center>
+		<div class="col-xs-12 col-sm-6">
+			<h2>About <b>KIIT</b></h2>
+			<hr>
+			<?php 
+			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIIT"));
+			$loop = new Wp_Query($args);
+
+			if ($loop -> have_posts()):
+				while ($loop->have_posts()): $loop->the_post(); ?>
+					<p><?php echo get_the_content(); ?></p>
+				<?php endwhile;
+			endif;
+			?>
+			
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<h2>About <b>KISS</b></h2>
+			<hr>
+			<?php 
+			$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIIT"));
+			$loop = new Wp_Query($args);
+
+			if ($loop -> have_posts()):
+				while ($loop->have_posts()): $loop->the_post(); ?>
+					<p><?php echo get_the_content(); ?></p>
+				<?php endwhile;
+			endif;
+			?>
+
+		</div>
+	</center>
+</section>
+
+<section id="beta-seventh">
+	<h1>About <br/><b>Incredible India</b></h1>
+	<hr>
+	<?php 
+	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About Incredible India"));
+	$loop = new Wp_Query($args);
+
+	if ($loop -> have_posts()):
+		while ($loop->have_posts()): $loop->the_post(); ?>
+			<span><?php echo get_the_content(); ?></span>
+		<?php endwhile;
+	endif;
+	?>
+</section>
+
+<section id="beta-eighth">
+	<h1>About<br/>KIITMUN <b>Society</b></h1>
+	<hr>
+	<?php 
+	$args = array('posts_per_page' => 1, 'cat' => get_cat_ID("Home Page About KIITMUN Society"));
+	$loop = new Wp_Query($args);
+
+	if ($loop -> have_posts()):
+		while ($loop->have_posts()): $loop->the_post(); ?>
+			<span><?php echo get_the_content(); ?></span>
+		<?php endwhile;
+	endif;
+	?>
+</section>
+
 
 <section id="beta-ninth">
 	<h1>Meet Us <b>Here</b></h1>
 	<hr>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14962.559068831144!2d85.8136923465576!3d20.356495146139697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x85a345e1f4fcce86!2sKiiT+Student+Activity+Center-KSAC!5e0!3m2!1sen!2sin!4v1527423728493" frameborder="0" style="border:0" allowfullscreen></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.690726633949!2d85.81246791429672!3d20.354391315834036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19091813dab8d5%3A0xa033051ccddbbcbc!2sKiit+University!5e0!3m2!1sen!2sin!4v1525261017509" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
 
 
