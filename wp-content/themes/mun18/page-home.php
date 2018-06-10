@@ -112,17 +112,6 @@ get_header();
 </section-->
 
 
-
-<!--IMAGE of committees-->
-<section>
-	<a href="https://kiitmun.org/committees/"><img src="https://kiitmun.org/wp-content/uploads/2018/05/COMMITTEES_20.jpg" style="width:100%;height:auto;"></a>
-</section>
-
-<br><br><br>
-<section>
-	<img src="<?php echo wp_get_attachment_url(519); ?>" style="width:100%;height:auto;">
-</section>
-
 <section id="beta-fourth">
 	<h1>In Other <b>Media</b></h1>
 	<hr>
