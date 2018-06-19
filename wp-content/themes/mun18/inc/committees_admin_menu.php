@@ -27,7 +27,7 @@ function custom_post_types1(){
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'publicly_queryable' => false,
+        'publicly_queryable' => true,
         'query_var' => true,
         'rewrite' => true,
         'capability_type' => 'post',

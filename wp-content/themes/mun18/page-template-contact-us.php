@@ -1,7 +1,7 @@
 <?php
 /*Template Name: Contact Us Page */
 get_header();
-
+$chk = 0;
 if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['form-subject']) && isset($_POST['form-message'])){
 	$name = esc_sql(strip_tags($_POST['form-name']));
 	$email = esc_sql(strip_tags($_POST['form-email']));
@@ -10,8 +10,8 @@ if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['f
 	$header = "From: ".$name." <".$email.">";
 
 	$message = $message.'-Website Contact Us';
-
-	if (mail('prkiitmun@gmail.com', $subject, $message, $header)){
+$chk = 0;
+	/*if (mail('prkiitmun@gmail.com', $subject, $message, $header)){
 		echo "<script>";
 		echo "alert('Mail sent');";
 		echo "</script>";
@@ -20,6 +20,13 @@ if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['f
 		echo "<script>";
 		echo "alert('Mail not sent');";
 		echo "</script>";
+	}*/
+
+	if (mail('prkiitmun@gmail.com', $subject, $message, $header)){
+		$chk = 1;
+	}
+	else{
+		$chk = 0;
 	}
 }
 
@@ -34,7 +41,9 @@ if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['f
 		</div>
 	</div>
 </section>
-
+<?php
+if($chk==0){
+	?>
 <section id="contact-second">
 	<h1>Connect To <b>Us</b></h1>
 	<hr>
@@ -60,6 +69,13 @@ if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['f
 		<button class="btn" type="submit">Submit</button>
 	</form>
 </section>
+<?php
+}
+else
+echo "<h3 style=\"text-align:center; margin-top:30px;\">Thank you for contacting. We will try to get back to you soon.</h3>";
+
+?>
+
 
 <section id="contact-third">
 	<h1>In Other <b>Media</b></h1>
