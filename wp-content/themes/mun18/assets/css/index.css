@@ -23,7 +23,10 @@ a:hover{
         font-size: 32px;
     }
 }
-
+select:disabled, input:disabled, textarea:disabled{
+    background: #eee !important;
+    color: #888 !important;
+}
 
 
 /*Navbar*/
@@ -34,7 +37,15 @@ a:hover{
     position: fixed;
     width: 100%;
     background-color: transparent;
-    box-shadow: 0 0 20px #aaa;
+}
+.navbarScroll{
+    top: 0;
+    border-top: 0;
+    z-index: 10000;
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 0 30px 0 black;
 }
 div#navbar {
     padding: 0 !important;
@@ -98,8 +109,32 @@ li.menu-item{
     color: orangered;
     background-color: transparent !important;
 }
-
+.overlay-img{
+  top: 15%;
+  bottom:15%;
+  left: 20%;
+  right: 20%;
+  position: fixed;
+  margin: 0 auto;
+  z-index:2000;
+  width:60%;
+  height:70%
+}
+.overlay{
+  position: fixed;
+ width:100%;
+ height:100%;
+  background-color: black;
+  opacity: 0.8;
+  z-index: 200;
+}
 @media screen and (max-width: 768px){
+  .overlay-img{
+    width: 100%;
+    height: auto;
+    left: 0;
+    right:0;
+  }
     img.img-responsive {
         width: 80%;
         margin: 0 ;
@@ -117,7 +152,6 @@ li.menu-item{
     .navbar-header{
         width: 100%;
         padding: 2vw !important;
-        box-shadow: 0px 0px 2px #eee;
     }
     .navbar-toggle{
         position: relative;
@@ -176,24 +210,23 @@ li.menu-item{
     z-index: 2;
 }
 #beta-first div.layer img{
-    height: 50%;
-    margin: 20vh auto;
+    height: 45%;
+    margin: 15vh auto 0;
     display: block;
 }
 .carousel-control{
     z-index: 5 !important
 }
 #beta-first div.layer .timer{
-    position: absolute;
     width: 100%;
-    bottom: 5vh;
+    margin-top: 0;
 }
 #beta-first div.layer .timer > div {
     color: white;
     display: inline-block;
     font-size: 1.25em;
     text-align: center;
-    margin: 10px 20px;
+    margin: 10px 20px 5px;
     min-width: 5em;
 }
 #beta-first div.layer .timer div.time{
@@ -203,11 +236,22 @@ li.menu-item{
 #beta-first div.layer .timer p{
     margin: 15px 0;
 }
+#beta-first div.layer h3{
+    text-align: center;
+    color: white;
+    margin-top: 0;
+}
+#beta-first div.layer h1{
+    text-align: center;
+    color: white;
+    margin: 12px 25px;
+}
 
 @media screen and (max-width: 768px){
     #beta-first div.layer img{
         width: 80%;
-        margin: 15vh 10%;
+        height: auto;
+        margin: 17.5vh auto 0;
     }
     #beta-first div.layer .timer > div{
         margin: 5px;
@@ -216,6 +260,16 @@ li.menu-item{
     }
     #beta-first div.layer .timer div.time{
         font-size: 2.5em;
+    }
+    #beta-first div.layer .timer{
+        bottom: 15vh;
+    }
+    #beta-first div.layer h3{
+        margin-top: -10px;
+    }
+    #beta-first div.layer h1 {
+        margin: 20px 0 0;
+        font-size: 30px;
     }
 }
 
@@ -251,7 +305,7 @@ li.menu-item{
 }
 #beta-second .third {
     text-align: justify;
-    color: #aeaeae;
+    color: black;
     display: block;
     font-size: 15px;
     font-weight: 500;
@@ -539,7 +593,7 @@ li.menu-item{
     color: #00c2e5;
     padding: 10px 30px;
     margin: 10vh 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: 0.3s;
 }
 #registrations-second button:hover{
@@ -549,9 +603,10 @@ li.menu-item{
 }
 @media screen and (max-width: 768px){
     #registrations-second{
-        padding: 10vh 10px;
+        padding: 8vh 10px 4vh;
     }
     #registrations-second button{
+        width: 90%;
         font-size: 12px;
         padding: 2vmin 4vmin;
         margin: 1vh 2vw;
@@ -560,12 +615,16 @@ li.menu-item{
 
 
 #registrations-third label{
+    width: 100%;
     margin-top: 15px;
 }
 #registrations-third input, #registrations-third textarea, #registrations-third select{
     width: 100%;
     display: block;
     border-color: #00c2e5;
+    border-radius: 4px;
+    background: transparent;
+    padding: 6px 12px;
 }
 #registrations-third input[type=checkbox], #registrations-third input[type=radio]{
     border-color: #00c2e5;
@@ -591,7 +650,6 @@ h1#not-found{
     text-align: center;
     color: #00c2e5;
     margin: 5vh 2vw;
-}
 }
 
 
@@ -672,11 +730,11 @@ h1#not-found{
 }
 #about-second .third {
     text-align: justify;
-    color: #aeaeae;
+    color: black;
     display: block;
     font-size: 15px;
     font-weight: 500;
-    padding: 0 7.5vmin;
+    padding: 0 8.5vmin;
 }
 @media screen and (max-width: 768px){
     #about-second{
@@ -707,7 +765,7 @@ h1#not-found{
     display: inline-block;
 }
 #about-third  div > p{
-    color: #aeaeae;
+    color: black;
     display: block;
     font-size: 15px;
     font-weight: 500;
@@ -759,7 +817,7 @@ h1#not-found{
     width: 50px !important;
 }
 #about-fourth > span{
-    color: #aeaeae;
+    color: black;
     display: block;
     font-size: 15px;
     font-weight: 500;
@@ -793,12 +851,45 @@ h1#not-found{
     width: 50px !important;
 }
 #about-fifth > span{
-    color: #aeaeae;
+    color: black;
     display: block;
     font-size: 15px;
     font-weight: 500;
     text-align: justify;
     margin: 0 5% 30px;
+}
+#about-sixth{
+    padding: 10vmin 10vmin 0;
+}
+#about-sixth h1{
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+#about-sixth hr{
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;
+    border-top: 10px solid #00c2e5 !important;
+    width: 50px !important;
+}
+#about-sixth > span{
+    color: black;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0 5% 30px;
+}
+@media screen and (max-width: 768px){
+    #about-sixth{
+        padding: 5vh 5vw 5vh;
+    }
+    #about-sixth > span{
+        margin: 0;
+    }
 }
 @media screen and (max-width: 768px){
     #about-fifth{
@@ -807,6 +898,41 @@ h1#not-found{
     #about-fifth > span{
         margin: 0;
     }
+}
+@media screen and (max-width: 768px){
+    #about-seventh{
+        padding: 5vh 5vw 5vh;
+    }
+    #about-seventh > span{
+        margin: 0;
+    }
+}
+
+#about-seventh{
+    padding: 10vmin 10vmin 0;
+}
+#about-seventh h1{
+    width: max-content;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+#about-seventh hr{
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;
+    border-top: 10px solid #00c2e5 !important;
+    width: 50px !important;
+}
+#about-seventh > span{
+    color: black;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0 1% 30px;
+
 }
 
 
@@ -1121,6 +1247,7 @@ h1#not-found{
     z-index: -1;
     left: 5vmin;
     margin-top: 0;
+	
 }
 #committees-second hr:nth-of-type(2){
     width: 5%;
