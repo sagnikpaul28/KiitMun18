@@ -1,15 +1,7 @@
 <?php
-/*Template Name: Home Page */
+/*Template Name: Test Page */
 get_header();
 ?>
-
-	<a target="_blank" id="myBtn" style="right: 25px;
-bottom: 20px; display: none; position: fixed;z-index: 99;" href="https://play.google.com/store/apps/details?id=com.kiitmun.sayantan.kiitmun18">
-
-		<img   style="width: 115px ; height: 125px; " src="https://kiitmun.org/wp-content/uploads/2018/09/qr.jpeg" />
-
-</a>
-
 <div class="overlay">
   </div>
 		<img class="overlay-img"  src="<?php echo wp_get_attachment_url(1224); ?>">
@@ -17,12 +9,11 @@ bottom: 20px; display: none; position: fixed;z-index: 99;" href="https://play.go
 	<section style="z-index:1" id='beta-first'>
 
 	<div class="layer">
-
 		<!--<img src="https://kiitmun.org/wp-content/uploads/2018/06/KIIT-Logo-New.png" style="height:50px;width:100px;margin-left:50px;margin-top:60px;">-->
 		<img src="<?php echo wp_get_attachment_url(259); ?>">
 
 		<center>
-			<!--<div class="timer">
+			<div class="timer">
 				<div class="days">
 					<div class='time'>00</div><p>days</p>
 				</div>
@@ -35,9 +26,6 @@ bottom: 20px; display: none; position: fixed;z-index: 99;" href="https://play.go
 				<div class="seconds">
 					<div class='time'>00</div><p>secs</p>
 				</div>
-			</div>-->
-			<div style="color:white;">
-			<h2>LET'S MUN</h2>
 			</div>
 
 			<h4 style="color: white">28th - 30th September</h4>
@@ -73,8 +61,7 @@ bottom: 20px; display: none; position: fixed;z-index: 99;" href="https://play.go
 				endwhile;
 			endif; ?>
 
-		</div>
-		
+	    </div>
 
 	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 	      	<span class="glyphicon glyphicon-chevron-left"></span>
@@ -251,18 +238,6 @@ bottom: 20px; display: none; position: fixed;z-index: 99;" href="https://play.go
 	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14962.559068831144!2d85.8136923465576!3d20.356495146139697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x85a345e1f4fcce86!2sKiiT+Student+Activity+Center-KSAC!5e0!3m2!1sen!2sin!4v1527423728493" frameborder="0" style="border:0" allowfullscreen></iframe>
 </section>
 
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 60) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-</script>
 
 <?php get_footer(); ?>

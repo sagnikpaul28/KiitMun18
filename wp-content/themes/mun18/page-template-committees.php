@@ -33,6 +33,11 @@ get_header();
 		endwhile;
 	endif;
 	?>
+	<h1>International Press (IP)</h1>
+	<hr>
+	<hr>
+	<p>As mentioned under Article 19 of the Universal Declaration of Human rights, everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers. Hence journalists play a crucial role in the functioning of the United Nations. In a nutshell, they help in mediating explanations to the public about what the organization does and why. Instead of representing the interests of a single country, the International Press Delegation allows participants to act as unbiased journalists, reporting on the proceedings of each simulation in the Conference. International Press investigates committee debates, conducts interviews, formulates newsletters and covers press conferences.<p>
+<strong>Committee strength: 60</strong>
 </section>
 
 <?php get_footer(); ?>

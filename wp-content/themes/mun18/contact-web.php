@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Contact Us Page */
+/*Template Name: Contact Us Web View Page */
 get_header();
 $chk = 0;
 if (isset($_POST['form-name']) && isset($_POST['form-email']) && isset($_POST['form-subject']) && isset($_POST['form-message'])){
