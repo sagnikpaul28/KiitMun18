@@ -6,7 +6,6 @@ Registrations Admin Panel
 =====================================================
 */
 
-
 /*
 =======================================
 Adding or Updating a Field
@@ -50,13 +49,15 @@ if (isset($_POST['admin-registration-form-submit'])){
 			$name, $propername, $label, $placeholder, $required, $options, $numberofrows, $id
 		));
 	}else{
+		$id = $wpdb->get_var( 'SELECT id FROM registration_form ORDER BY id DESC LIMIT 1') + 1;
 		$wpdb->query( $wpdb->prepare( 
 			"
 				INSERT INTO registration_form
-				( name, propername, type, label, placeholder, required, options, numberofrows, delegation )
-				VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s )
+				( id, name, propername, type, label, placeholder, required, options, numberofrows, delegation )
+				VALUES ( %d, %s, %s, %s, %s, %s, %s, %s, %s, %s )
 			", 
 		        array(
+				$id,
 				$name,
 				$propername, 
 				$type, 
@@ -97,29 +98,29 @@ if (isset($_POST['registration_single_delegation_table_create'])){
 	foreach ($results as $r){
 		$query = $query." ".$r." TEXT NOT NULL,";
 	}
-	$query = $query." Committee1 TEXT NOT NULL, Country1 TEXT NOT NULL, Committee2 TEXT NOT NULL, Country2 TEXT NOT NULL, Committee3 TEXT NOT NULL, Country3 TEXT NOT NULL, FinalCommittee TEXT NOT NULL, FinalCountry TEXT NOT NULL)";
+	$query = $query." Committee1 TEXT NOT NULL, Country11 TEXT NOT NULL, Country12 TEXT NOT NULL, Country13 TEXT NOT NULL, Committee2 TEXT NOT NULL, Country21 TEXT NOT NULL, Country22 TEXT NOT NULL, Country23 TEXT NOT NULL, Committee3 TEXT NOT NULL, Country31 TEXT NOT NULL, Country32 TEXT NOT NULL, Country33 TEXT NOT NULL, FinalCommittee TEXT NOT NULL, FinalCountry TEXT NOT NULL)";
 	$wpdb->query($query);
 }
 
 if (isset($_POST['registration_double_delegation_table_create'])){
 	global $wpdb;
-	$results = $wpdb->get_col('SELECT propername,delegation FROM registration_form WHERE delegation LIKE "double%"');
+	$wpdb->show_errors();
+	$results = $wpdb->get_results('SELECT propername,delegation FROM registration_form WHERE delegation LIKE "double%"');
 	$query = "CREATE TABLE registration_double_delegation (id INT AUTO_INCREMENT PRIMARY KEY, ";
 	foreach ($results as $r){
 		if ($r->delegation === 'double-single'){
-			$query = $query." ".$r." TEXT NOT NULL,";	
+			$query = $query." ".$r->propername." TEXT NOT NULL,";	
 		}else{
-			$query = $query." ".$r."1 TEXT NOT NULL,";
-			$query = $query." ".$r."2 TEXT NOT NULL,";
+			$query = $query." ".$r->propername."1 TEXT NOT NULL,";
+			$query = $query." ".$r->propername."2 TEXT NOT NULL,";
 		}
 	}
-	$query = $query." Committee1 TEXT NOT NULL, Country1 TEXT NOT NULL, Committee2 TEXT NOT NULL, Country2 TEXT NOT NULL, Committee3 TEXT NOT NULL, Country3 TEXT NOT NULL, FinalCommittee TEXT NOT NULL, FinalCountry TEXT NOT NULL)";
+	$query = $query." Committee1 TEXT NOT NULL, Country11 TEXT NOT NULL, Country12 TEXT NOT NULL, Country13 TEXT NOT NULL, Committee2 TEXT NOT NULL, Country21 TEXT NOT NULL, Country22 TEXT NOT NULL, Country23 TEXT NOT NULL, Committee3 TEXT NOT NULL, Country31 TEXT NOT NULL, Country32 TEXT NOT NULL, Country33 TEXT NOT NULL, FinalCommittee TEXT NOT NULL, FinalCountry TEXT NOT NULL)";
 	$wpdb->query($query);
 }
 
 if (isset($_POST['registration_ip_table_create'])){
 	global $wpdb;
-	$wpdb->show_errors();
 	$results = $wpdb->get_col('SELECT propername FROM registration_form WHERE delegation="ip"');
 	$query = "CREATE TABLE registration_ip (id INT AUTO_INCREMENT PRIMARY KEY, ";
 	foreach ($results as $r){

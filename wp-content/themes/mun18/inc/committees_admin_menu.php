@@ -43,7 +43,7 @@ function custom_post_types1(){
     );
 
     register_post_type('committee', $args);
-    flush_rewrite_rules( $hard );
+    flush_rewrite_rules( true );
     
 }
 
